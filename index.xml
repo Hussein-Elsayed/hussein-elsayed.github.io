@@ -1,0 +1,35 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wh1rlw1nd on Wh1rlw1nd</title>
+    <link>https://example.com/</link>
+    <description>Recent content in Wh1rlw1nd on Wh1rlw1nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Mar 2021 14:30:47 +0200</lastBuildDate>
+    <atom:link href="https://example.com/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://example.com/posts/</link>
+      <pubDate>Fri, 26 Mar 2021 14:30:47 +0200</pubDate>
+      
+      <guid>https://example.com/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is Hussein Elsayed. CyberSecurity Enthusiast, Penetration Tester and a Red Teamer wannabe.
+Here i&amp;rsquo;m sharing with you any knowledge i got.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
