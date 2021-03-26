@@ -2,19 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Wh1rlw1nd</title>
-    <link>https://example.com/posts/</link>
+    <link>https://hussein-elsayed.github.io/posts/</link>
     <description>Recent content in Posts on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Mar 2021 14:30:47 +0200</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 14:30:47 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello world!</title>
-      <link>https://example.com/2021/hello/</link>
+      <link>https://hussein-elsayed.github.io/2021/hello/</link>
       <pubDate>Fri, 26 Mar 2021 14:30:47 +0200</pubDate>
       
-      <guid>https://example.com/2021/hello/</guid>
+      <guid>https://hussein-elsayed.github.io/2021/hello/</guid>
       <description> Hello, this is my first post.
 And this is some Bla Bla. </description>
+    </item>
+    
+    <item>
+      <title>Time HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/time/</link>
+      <pubDate>Fri, 26 Mar 2021 04:42:47 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/time/</guid>
+      <description>  Enumeration:
+ Nmap scan:     let&amp;rsquo;s checkout the running web server:   its a java beautifier and validator.
+  lets check the source code: nothing interesting in the source code
+  let&amp;rsquo;s search for hidden directories:
+  $ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar </description>
     </item>
     
   </channel>

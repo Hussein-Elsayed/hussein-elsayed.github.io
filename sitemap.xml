@@ -2,7 +2,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://example.com/2021/hello/</loc>
+      <loc>https://hussein-elsayed.github.io/2021/hello/</loc>
       
       <lastmod>2021-03-26T14:30:47+02:00</lastmod>
       
@@ -16,7 +16,7 @@
     </url>
   
     <url>
-      <loc>https://example.com/posts/</loc>
+      <loc>https://hussein-elsayed.github.io/posts/</loc>
       
       <lastmod>2021-03-26T14:30:47+02:00</lastmod>
       
@@ -30,7 +30,7 @@
     </url>
   
     <url>
-      <loc>https://example.com/</loc>
+      <loc>https://hussein-elsayed.github.io/</loc>
       
       <lastmod>2021-03-26T14:30:47+02:00</lastmod>
       
@@ -44,7 +44,21 @@
     </url>
   
     <url>
-      <loc>https://example.com/about/</loc>
+      <loc>https://hussein-elsayed.github.io/2021/time/</loc>
+      
+      <lastmod>2021-03-26T04:42:47+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/about/</loc>
       
       <lastmod>2021-03-26T00:00:00+00:00</lastmod>
       
@@ -58,7 +72,9 @@
     </url>
   
     <url>
-      <loc>https://example.com/categories/</loc>
+      <loc>https://hussein-elsayed.github.io/categories/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -70,7 +86,49 @@
     </url>
   
     <url>
-      <loc>https://example.com/tags/</loc>
+      <loc>https://hussein-elsayed.github.io/projects/migrate-from-jekyll/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/projects/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/categories/uncategorized/</loc>
+      
+      <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/</loc>
       
       
       <changefreq>monthly</changefreq>

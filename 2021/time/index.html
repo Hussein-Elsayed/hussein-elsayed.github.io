@@ -10,9 +10,9 @@
   
   
   
-  <link rel="prev" href="https://hussein-elsayed.github.io/2021/time/" />
   
-  <link rel="canonical" href="https://hussein-elsayed.github.io/2021/hello/" />
+  <link rel="next" href="https://hussein-elsayed.github.io/2021/hello/" />
+  <link rel="canonical" href="https://hussein-elsayed.github.io/2021/time/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,10 +24,10 @@
   <title>
        
        
-           Hello world! | Wh1rlw1nd
+           Time HTB Writeup | Wh1rlw1nd
        
   </title>
-  <meta name="title" content="Hello world! | Wh1rlw1nd">
+  <meta name="title" content="Time HTB Writeup | Wh1rlw1nd">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,18 +35,21 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hello world!"/>
-<meta name="twitter:description" content=" Hello, this is my first post.
-And this is some Bla Bla. "/>
+<meta name="twitter:title" content="Time HTB Writeup"/>
+<meta name="twitter:description" content="  Enumeration:
+ Nmap scan:     let&rsquo;s checkout the running web server:   its a java beautifier and validator.
+  lets check the source code: nothing interesting in the source code
+  let&rsquo;s search for hidden directories:
+  $ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar "/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Hello world!",
+  "headline": "Time HTB Writeup",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/hussein-elsayed.github.io\/2021\/hello\/"
+    "@id": "https:\/\/hussein-elsayed.github.io\/2021\/time\/"
   },
   "image": {
     "@type": "ImageObject",
@@ -56,10 +59,10 @@ And this is some Bla Bla. "/>
   },
   "genre": "posts",
   
-  "wordcount":  12 ,
-  "url": "https:\/\/hussein-elsayed.github.io\/2021\/hello\/",
-  "datePublished": "2021-03-26T14:30:47\u002b02:00",
-  "dateModified": "2021-03-26T14:30:47\u002b02:00",
+  "wordcount":  38 ,
+  "url": "https:\/\/hussein-elsayed.github.io\/2021\/time\/",
+  "datePublished": "2021-03-26T04:42:47\u002b02:00",
+  "dateModified": "2021-03-26T04:42:47\u002b02:00",
   
   "publisher": {
     "@type": "Organization",
@@ -131,7 +134,7 @@ And this is some Bla Bla. "/>
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">Hello world!</h1>
+        <h1 class="post-title">Time HTB Writeup</h1>
         <div class="post-meta">
             Written by <a href="https://hussein-elsayed.github.io/" rel="author">Wh1rlw1nd</a> with ♥ 
                 <span class="post-time">
@@ -147,6 +150,8 @@ And this is some Bla Bla. "/>
         
 
         
+            
+        
 
         
         
@@ -159,10 +164,35 @@ And this is some Bla Bla. "/>
           
           
 
-          <hr>
-<p>Hello, this is my first post.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">And <span style="color:#66d9ef">this</span> is some Bla Bla<span style="color:#f92672">.</span>
-</code></pre></div>
+          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/1.png" alt="The machine info" class="lazyload"><figcaption class="image-caption">The machine info</figcaption></figure></p>
+<ul>
+<li>
+<p><strong>Enumeration:</strong></p>
+<ul>
+<li>Nmap scan:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+</li>
+<li>
+<p>let&rsquo;s checkout the running web server:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+</li>
+</ul>
+<p>its a java beautifier and validator.</p>
+<ul>
+<li>
+<p>lets check the source code:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+nothing interesting in the source code</p>
+</li>
+<li>
+<p>let&rsquo;s search for hidden directories:</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar</span>
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
     </div>
 
     <div class="post-copyright">
@@ -175,7 +205,7 @@ And this is some Bla Bla. "/>
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>12</span>
+                   <span>38</span>
             </p>
             
             <p class="copyright-item">
@@ -184,13 +214,13 @@ And this is some Bla Bla. "/>
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fhello%2f&amp;text=Hello%20world%21&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2ftime%2f&amp;text=Time%20HTB%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
       
       
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fhello%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2ftime%2f" target="_blank" title="Share on Facebook">
           <i class="iconfont icon-facebook"></i>
         </a>
         
@@ -198,7 +228,7 @@ And this is some Bla Bla. "/>
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fhello%2f&amp;title=Hello%20world%21" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2ftime%2f&amp;title=Time%20HTB%20Writeup" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
@@ -237,9 +267,9 @@ And this is some Bla Bla. "/>
     </div>
 
     <div class="post-nav">
-        
-        <a href="https://hussein-elsayed.github.io/2021/time/" class="prev" rel="prev" title="Time HTB Writeup"><i class="iconfont icon-dajiantou"></i>&nbsp;Time HTB Writeup</a>
          
+        
+        <a href="https://hussein-elsayed.github.io/2021/hello/" class="next" rel="next" title="Hello world!">Hello world!&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
@@ -294,8 +324,9 @@ And this is some Bla Bla. "/>
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
