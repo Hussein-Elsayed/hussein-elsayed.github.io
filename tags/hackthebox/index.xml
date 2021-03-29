@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Wh1rlw1nd</title>
-    <link>https://hussein-elsayed.github.io/posts/</link>
-    <description>Recent content in Posts on Wh1rlw1nd</description>
+    <title>hackthebox on Wh1rlw1nd</title>
+    <link>https://hussein-elsayed.github.io/tags/hackthebox/</link>
+    <description>Recent content in hackthebox on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Mar 2021 09:20:04 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Mar 2021 09:20:04 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Luanne HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/luanne/</link>
@@ -29,16 +29,6 @@ Methodology:  Recon / Scanning Target Searching for Vulnerabilities - also under
   lets check the source code: nothing interesting in the source code
   let&amp;rsquo;s search for hidden directories:
   $ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar </description>
-    </item>
-    
-    <item>
-      <title>Hello world!</title>
-      <link>https://hussein-elsayed.github.io/2021/hello/</link>
-      <pubDate>Thu, 25 Mar 2021 14:30:47 +0200</pubDate>
-      
-      <guid>https://hussein-elsayed.github.io/2021/hello/</guid>
-      <description> Hello, this is my first post.
-And this is some Bla Bla. </description>
     </item>
     
   </channel>

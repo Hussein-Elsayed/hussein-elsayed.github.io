@@ -5,13 +5,13 @@
     <description>Recent content in Wh1rlw1nd on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Mar 2021 14:30:47 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 27 Mar 2021 09:20:04 +0200</lastBuildDate>
     <atom:link href="https://hussein-elsayed.github.io/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Posts</title>
       <link>https://hussein-elsayed.github.io/posts/</link>
-      <pubDate>Fri, 26 Mar 2021 14:30:47 +0200</pubDate>
+      <pubDate>Sat, 27 Mar 2021 09:20:04 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/posts/</guid>
       <description></description>
@@ -23,11 +23,12 @@
       <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://hussein-elsayed.github.io/about/</guid>
-      <description>&lt;p&gt;Hello world!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This is Hussein Elsayed. CyberSecurity Enthusiast, Penetration Tester and a Red Teamer wannabe.
-Here i&amp;rsquo;m sharing with you any knowledge i got.&lt;/p&gt;
-&lt;/blockquote&gt;
+      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello world!&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;This is Hussein Elsayed. CyberSecurity Enthusiast, Penetration Tester and a Red Teamer wannabe.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Here i&amp;rsquo;m sharing with you my thoughts and any knowledge i got so far.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;my-hackthebox-accounthttpswwwhacktheboxeuhomeusersprofile182588&#34;&gt;My Hackthebox &lt;a href=&#34;https://www.hackthebox.eu/home/users/profile/182588&#34;&gt;account&lt;/a&gt;&lt;/h3&gt;
 </description>
     </item>
     
