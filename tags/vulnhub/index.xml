@@ -6,16 +6,7 @@
     <description>Recent content in Vulnhub on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 30 Mar 2021 10:51:52 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/vulnhub/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Null Byte Writeup</title>
-      <link>https://hussein-elsayed.github.io/2021/nullbyte/</link>
-      <pubDate>Tue, 30 Mar 2021 10:51:52 +0200</pubDate>
-      
-      <guid>https://hussein-elsayed.github.io/2021/nullbyte/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Sat, 11 Apr 2020 10:50:53 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/vulnhub/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kioptrix 2 Writeup</title>
       <link>https://hussein-elsayed.github.io/2020/kioptrix2/</link>
@@ -27,6 +18,19 @@ Services:
  Apache MySQL Openssh RPC CUPS  0. Getting machine&amp;rsquo;s ip: Also # netdiscover -r 192.168.1.0/24 works fine.
 1. Enumeration:  Zenmap:   So first things first, let&amp;rsquo;s check the web server running ..
 2. Web Server:  Hitting vm&amp;rsquo;s ip 192.168.1.7 shows us this login form:   it&amp;rsquo;s an admin login , maybe it&amp;rsquo;s vulnerable to sql injection let&amp;rsquo;s try to bypass it .</description>
+    </item>
+    
+    <item>
+      <title>Null Byte Writeup</title>
+      <link>https://hussein-elsayed.github.io/2020/nullbyte/</link>
+      <pubDate>Wed, 08 Apr 2020 10:51:52 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2020/nullbyte/</guid>
+      <description>Download VM here.
+Run it on virtualbox, and let&amp;rsquo;s get started.
+0. Get VM&amp;rsquo;s IP:  $ nmap -sn 192.168.1.0/24   1. Enumeration: Now we can continue to scan the machine and the running services.
+ Using Zenmap (GUI nmap) : $ nmap -T4 -A -v 192.168.1.142   As you can see there are :
+ Apache server running on port 80 rpcbind on port 111 ssh on port 777  2.</description>
     </item>
     
     <item>
