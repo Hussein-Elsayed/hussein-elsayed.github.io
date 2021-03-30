@@ -25,5 +25,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Vulnhub</title>
+      <link>https://hussein-elsayed.github.io/tags/vulnhub/</link>
+      <pubDate>Tue, 03 Mar 2020 15:47:35 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/tags/vulnhub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>projects</title>
+      <link>https://hussein-elsayed.github.io/tags/projects/</link>
+      <pubDate>Wed, 08 Jan 2020 14:42:08 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/tags/projects/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

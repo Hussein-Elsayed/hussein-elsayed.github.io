@@ -31,5 +31,16 @@ Methodology:  Recon / Scanning Target Searching for Vulnerabilities - also under
   $ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar </description>
     </item>
     
+    <item>
+      <title>Kioptrix Level 1 Writeup</title>
+      <link>https://hussein-elsayed.github.io/2020/kioptrix1/</link>
+      <pubDate>Tue, 03 Mar 2020 15:47:35 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2020/kioptrix1/</guid>
+      <description>This machine is from vulnhub you can download it here.   After downloading the machine you will open the .vmx file in VMware or .vmdk with VirtualBox.
+  It&amp;rsquo;s a preconfigured machine it must work directly, but you may need to change the network adapter to NAT and the version to linux and kernal version you work on, then power it on &amp;hellip;
+  have fun&amp;hellip; 0. Getting VM&amp;rsquo;s IP:  using Netdiscover or Nmap  $ nmap -sn 192.</description>
+    </item>
+    
   </channel>
 </rss>

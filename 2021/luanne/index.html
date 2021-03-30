@@ -236,13 +236,13 @@ Service Info: OS: NetBSD; CPE: cpe:/o:netbsd:netbsd
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>i also ran dirsearch again on the luanne.htb/weather &raquo; but got nothing.
 then i tried to search with the CVEs about nginx with version 1.9.0 and openssh but nothing usefull. so i turned back to enumeration.</p>
-<p>This time using a begger wordlist and gobuster.</p>
+<p>This time using a bigger wordlist and gobuster.</p>
 <h3 id="gobuster">Gobuster:</h3>
 <ul>
 <li>gobuster dir -u <a href="http://luanne.htb/weather">http://luanne.htb/weather</a> -w /usr/share/dirb/wordlists/big.txt
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/12.png" alt="found this /forecast path" class="lazyload"><figcaption class="image-caption">found this /forecast path</figcaption></figure>
-we could have used dirsearch too, but gobuster is faster in this case with big wordlists.</li>
+we could have used dirsearch too, but gobuster is faster in this case with bigger wordlists.</li>
 </ul>
 <h3 id="time-for-web-enumeration">Time for Web Enumeration:</h3>
 <ul>

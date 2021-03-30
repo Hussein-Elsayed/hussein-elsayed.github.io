@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vulnhub on Wh1rlw1nd</title>
+    <link>https://hussein-elsayed.github.io/tags/vulnhub/</link>
+    <description>Recent content in Vulnhub on Wh1rlw1nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 03 Mar 2020 15:47:35 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/vulnhub/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kioptrix Level 1 Writeup</title>
+      <link>https://hussein-elsayed.github.io/2020/kioptrix1/</link>
+      <pubDate>Tue, 03 Mar 2020 15:47:35 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2020/kioptrix1/</guid>
+      <description>This machine is from vulnhub you can download it here.   After downloading the machine you will open the .vmx file in VMware or .vmdk with VirtualBox.
+  It&amp;rsquo;s a preconfigured machine it must work directly, but you may need to change the network adapter to NAT and the version to linux and kernal version you work on, then power it on &amp;hellip;
+  have fun&amp;hellip; 0. Getting VM&amp;rsquo;s IP:  using Netdiscover or Nmap  $ nmap -sn 192.</description>
+    </item>
+    
+  </channel>
+</rss>
