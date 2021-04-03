@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>retired on Wh1rlw1nd</title>
+    <link>https://hussein-elsayed.github.io/tags/retired/</link>
+    <description>Recent content in retired on Wh1rlw1nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Apr 2021 20:51:59 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/retired/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lame HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/lame/</link>
+      <pubDate>Sat, 03 Apr 2021 20:51:59 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/lame/</guid>
+      <description>This machine is very easy and straight forward using public exploit and then you get root access directly. These machine from retired machines on hackthebox and you need a vip subscribtion to access them. enjoy..
+1. Enumeration:  Nmap scan: nmap -sC -sV 10.10.10.3 -Pn or sudo nmap -sV -O -F --version-light 10.10.10.3   now we know the open ports and running services on them:
+ 21 &amp;raquo; ftp 22 &amp;raquo; ssh 139 &amp;raquo; samba 445 &amp;raquo; samba  FTP Enumeration:  let&amp;rsquo;s try loging into ftp using anonymous and empty password just press enter.</description>
+    </item>
+    
+  </channel>
+</rss>

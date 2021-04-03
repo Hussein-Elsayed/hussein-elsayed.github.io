@@ -4,7 +4,7 @@
     <url>
       <loc>https://hussein-elsayed.github.io/tags/hackthebox/</loc>
       
-      <lastmod>2021-03-27T09:20:04+02:00</lastmod>
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -16,9 +16,9 @@
     </url>
   
     <url>
-      <loc>https://hussein-elsayed.github.io/2021/luanne/</loc>
+      <loc>https://hussein-elsayed.github.io/2021/lame/</loc>
       
-      <lastmod>2021-03-27T09:20:04+02:00</lastmod>
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -32,7 +32,21 @@
     <url>
       <loc>https://hussein-elsayed.github.io/posts/</loc>
       
-      <lastmod>2021-03-27T09:20:04+02:00</lastmod>
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/retired/</loc>
+      
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -46,7 +60,7 @@
     <url>
       <loc>https://hussein-elsayed.github.io/tags/</loc>
       
-      <lastmod>2021-03-27T09:20:04+02:00</lastmod>
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -60,7 +74,7 @@
     <url>
       <loc>https://hussein-elsayed.github.io/</loc>
       
-      <lastmod>2021-03-27T09:20:04+02:00</lastmod>
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -73,6 +87,34 @@
   
     <url>
       <loc>https://hussein-elsayed.github.io/tags/writeups/</loc>
+      
+      <lastmod>2021-04-03T20:51:59+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/crossfit/</loc>
+      
+      <lastmod>2021-03-31T15:35:44+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/luanne/</loc>
       
       <lastmod>2021-03-27T09:20:04+02:00</lastmod>
       

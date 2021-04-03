@@ -6,7 +6,29 @@
     <description>Recent content in hackthebox on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Mar 2021 09:20:04 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Apr 2021 20:51:59 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lame HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/lame/</link>
+      <pubDate>Sat, 03 Apr 2021 20:51:59 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/lame/</guid>
+      <description>This machine is very easy and straight forward using public exploit and then you get root access directly. These machine from retired machines on hackthebox and you need a vip subscribtion to access them. enjoy..
+1. Enumeration:  Nmap scan: nmap -sC -sV 10.10.10.3 -Pn or sudo nmap -sV -O -F --version-light 10.10.10.3   now we know the open ports and running services on them:
+ 21 &amp;raquo; ftp 22 &amp;raquo; ssh 139 &amp;raquo; samba 445 &amp;raquo; samba  FTP Enumeration:  let&amp;rsquo;s try loging into ftp using anonymous and empty password just press enter.</description>
+    </item>
+    
+    <item>
+      <title>CrossFit HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/crossfit/</link>
+      <pubDate>Wed, 31 Mar 2021 15:35:44 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/crossfit/</guid>
+      <description>Hello guys, crossfit has retired today and here&amp;rsquo;s its walkthrough.
+It&amp;rsquo;s an amazing box; it contains lots of ideas. hope you enjoy it.
+1. Enumeration:  Our Nmap scan as usual:  $ nmap -sC -sV 10.10.10.208 PORT STATE SERVICE VERSION 21/tcp open ftp vsftpd 2.0.8 or later | ssl-cert: Subject: commonName=*.crossfit.htb/organizationName=Cross Fit Ltd./stateOrProvinceName=NY/countryName=US | Not valid before: 2020-04-30T19:16:46 |_Not valid after: 3991-08-16T19:16:46 |_ssl-date: TLS randomness does not represent time 22/tcp open ssh OpenSSH 7.</description>
+    </item>
+    
     <item>
       <title>Luanne HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/luanne/</link>
@@ -24,11 +46,12 @@ Methodology:  Recon / Scanning Target Searching for Vulnerabilities - also under
       <pubDate>Fri, 26 Mar 2021 04:42:47 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/2021/time/</guid>
-      <description>  Enumeration:
- Nmap scan:     let&amp;rsquo;s checkout the running web server:   its a java beautifier and validator.
-  lets check the source code: nothing interesting in the source code
+      <description>Time is a medium machine retired today, but i think it&amp;rsquo;s an easy and straight forward one. enjoy ..
+1. Enumeration:   Nmap scan:
+  nmap -sC -sV 10.10.10.214     Web Enumeration:
+ let&amp;rsquo;s check out the running web server:     And the source code: Nothing interesting in the source code.
   let&amp;rsquo;s search for hidden directories:
-  $ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar </description>
+  $ python3 dirsearch.</description>
     </item>
     
   </channel>
