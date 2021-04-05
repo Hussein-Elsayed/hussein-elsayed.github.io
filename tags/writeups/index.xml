@@ -6,7 +6,19 @@
     <description>Recent content in Writeups on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Apr 2021 20:51:59 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Apr 2021 23:15:54 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Legacy HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/legacy/</link>
+      <pubDate>Sun, 04 Apr 2021 23:15:54 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/legacy/</guid>
+      <description>This machine mimics a windows legacy (windows xp). it&amp;rsquo;s a straight forward one depends on a public exploit for the (MS08-067) patch leads to RCE and gets us root access directly.
+enjoy..
+1. Enumeration:  Nmap:  $ nmap -sC -sV 10.10.10.4 -Pn     The ports of interest (139, 445).
+2. let&amp;rsquo;s do a vulnerability scan on them:  $ sudo nmap -p139,445 --script vuln 10.10.10.4   It revealed an RCE in the samba version with cve number (2008-4250) or (MS08-067) patch.</description>
+    </item>
+    
     <item>
       <title>Lame HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/lame/</link>

