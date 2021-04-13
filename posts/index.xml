@@ -6,7 +6,62 @@
     <description>Recent content in Posts on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Apr 2021 23:15:54 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 02:26:38 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bank HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/bank/</link>
+      <pubDate>Tue, 13 Apr 2021 02:26:38 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/bank/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Granny HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/granny/</link>
+      <pubDate>Tue, 13 Apr 2021 02:26:29 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/granny/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Grandpa HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/grandpa/</link>
+      <pubDate>Mon, 12 Apr 2021 11:37:31 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/grandpa/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Optimum HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/optimum/</link>
+      <pubDate>Mon, 12 Apr 2021 11:37:13 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/optimum/</guid>
+      <description>There are two ways to solve this. one of them using metasploit and it&amp;rsquo;s the easy one. so we will not using this one here. And will use powershell..
+1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Beep HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/beep/</link>
+      <pubDate>Thu, 08 Apr 2021 23:23:32 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/beep/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Devel HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/devel/</link>
+      <pubDate>Thu, 08 Apr 2021 23:21:51 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/devel/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
     <item>
       <title>Legacy HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/legacy/</link>
