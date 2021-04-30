@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://hussein-elsayed.github.io/2021/valentine/" />
+  <link rel="next" href="https://hussein-elsayed.github.io/2021/bounty/" />
+  <link rel="canonical" href="https://hussein-elsayed.github.io/2021/sunday/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Sunday HTB Writeup | Wh1rlw1nd
+       
+  </title>
+  <meta name="title" content="Sunday HTB Writeup | Wh1rlw1nd">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sunday HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration:  Nmap:   another scan for all the TCP ports:
+ $ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76    Best result: scanning all ports but took too much time $ nmap -p 1-65535 -T4 -A 10.10.10.76 Anyway we have these interesting ports and services:
+ 79	finger 111, 52988	rpcbind 22022	ssh  Let&rsquo;s do some search:
+A finger service is running on this host."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sunday HTB Writeup",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/hussein-elsayed.github.io\/2021\/sunday\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/hussein-elsayed.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "Writeups, hackthebox, retired",
+  "wordcount":  291 ,
+  "url": "https:\/\/hussein-elsayed.github.io\/2021\/sunday\/",
+  "datePublished": "2021-04-30T00:54:03\u002b02:00",
+  "dateModified": "2021-04-30T00:54:03\u002b02:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Wh1rlw1nd",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/hussein-elsayed.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Wh1rlw1nd"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Sunday HTB Writeup</h1>
+        <div class="post-meta">
+            Written by <a href="https://hussein-elsayed.github.io/" rel="author">Wh1rlw1nd</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-04-30 >30 April 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                2 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/1.png" alt="Machine Info" class="lazyload"><figcaption class="image-caption">Machine Info</figcaption></figure></p>
+<h3 id="1-enumeration">1. Enumeration:</h3>
+<ul>
+<li>Nmap:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>another scan for all the TCP ports:</p>
+<ul>
+<li><code>$ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76 </code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>Best result:
+scanning all ports but took too much time
+<code>$ nmap -p 1-65535 -T4 -A 10.10.10.76</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Anyway we have these interesting ports and services:</p>
+<ul>
+<li>79		finger</li>
+<li>111, 52988	rpcbind</li>
+<li>22022		ssh</li>
+</ul>
+<p>Let&rsquo;s do some search:</p>
+<p><code>A finger service is running on this host. The finger protocol is used to find out information about users on a remote system. Finger servers can usually provide either a list of logged-in users or detailed information on a single user.</code></p>
+<p>we can enumerate finger with this <a href="https://github.com/pentestmonkey/finger-user-enum">finger-user-enum</a> tool..</p>
+<ul>
+<li>Usage:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p><code>$ ./finger-user-enum.pl -U /usr/share/SecLists/Usernames/Names/names.txt -t 10.10.10.76</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>we got sammy and sunny users and root..also their connection type!</p>
+<p>Notice the difference between (tty and pts):</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>which means there is an ssh connection from user sunny and ofcourse will be on port 22022 not the default 22..</p>
+<p>Getting User:</p>
+<ul>
+<li>Trying sunny and password: sunday as a guess &raquo; worked</li>
+<li>didn&rsquo;t find the user.txt flag..
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>Trying <code>sudo -l</code> &raquo; works fine without password:</p>
+<ul>
+<li>We can run the /root/troll script with root priv without password.
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>Found sammy hash:
+<code>$5$Ebkn8jlK$i6SSPa0.u7Gd.0oJOT4T421N2OvsfXqAT1vCoYUOigB:6445</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>let&rsquo;s crack it with John:</p>
+<ul>
+<li>
+<p>save it to file &raquo; hash.txt
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+</li>
+<li>
+<p><code>$ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt</code></p>
+</li>
+<li>
+<p><code>$ john --show hash.txt</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+</li>
+</ul>
+<p>GOT the password for sammy: <code>cooldude!</code></p>
+<p>Switching into sammy &raquo; didn&rsquo;t get the user flag!
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/14.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>logging with ssh is better:</p>
+<ul>
+<li>you will get an error &raquo; and to solve it use this flag
+<code>-oKexAlgorithms=+diffie-hellman-group1-sha1</code></li>
+<li><code>ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 sammy@10.10.10.76 -p 22022</code></li>
+<li>All good and got the user flag..
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/15.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<h3 id="privilege-escalation">Privilege Escalation:</h3>
+<ul>
+<li><code>sudo -l</code> command needs no password and reveals that we could use wget with root privileges:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sunday/16.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>There are lots of ways to privilege with wget if it runs with root privilege!</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Wh1rlw1nd </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>291</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fsunday%2f&amp;text=Sunday%20HTB%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fsunday%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fsunday%2f&amp;title=Sunday%20HTB%20Writeup" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/writeups/">
+                    #Writeups</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/hackthebox/">
+                    #hackthebox</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/retired/">
+                    #retired</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://hussein-elsayed.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://hussein-elsayed.github.io/2021/valentine/" class="prev" rel="prev" title="Valentine HTB Writeup"><i class="iconfont icon-dajiantou"></i>&nbsp;Valentine HTB Writeup</a>
+         
+        
+        <a href="https://hussein-elsayed.github.io/2021/bounty/" class="next" rel="next" title="Bounty HTB Writeup">Bounty HTB Writeup&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'disqus_NIRv8ve7PS';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

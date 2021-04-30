@@ -6,7 +6,131 @@
     <description>Recent content in hackthebox on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Apr 2021 02:26:38 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 00:55:54 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>P.O.O Endgame HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/poo/</link>
+      <pubDate>Fri, 30 Apr 2021 00:55:54 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/poo/</guid>
+      <description>As you see endgame type consists of more than one machine connected to each other and the flags are devided on specific steps..
+1. Enumeration:  Nmap: $ nmap -sV -sC -A 10.13.38.11 -Pn   Web Enumeration:  PORT 80 iis default page..   Nikto:
+ simple web vuln scanner $ nikto -h 10.13.38.11   nikto revealed a .DS_Store file in the server&amp;rsquo;s root folder.
+The DS_Store, or Desktop Services Store is a hidden file use by Mac OS X.</description>
+    </item>
+    
+    <item>
+      <title>Active HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/active/</link>
+      <pubDate>Fri, 30 Apr 2021 00:54:40 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/active/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services $ nmap -sC -sV -A 10.10.10.100 -Pn   Many ports are open so let&amp;rsquo;s focus on the important ones only:
+ kerberos on 88 , netbios-ssn on 139 , ldap on 389,3268  SMB Enumeration:
+As we have netbios-ssn open on port 139 let’s run smbmap and see if their shared files..
+  smbmap -H 10.10.10.100 see! we can acces Replication.</description>
+    </item>
+    
+    <item>
+      <title>Bounty HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/bounty/</link>
+      <pubDate>Fri, 30 Apr 2021 00:54:09 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/bounty/</guid>
+      <description>1. Enumeration:  Nmap:   Web Enumeration:  visiting the website &amp;raquo; nothing useful   wfuzz: $ wfuzz -c --hc 404 -t 200 -w /usr/share/wordlists/dirb/common.txt http://bounty.htb/FUZZ
+Gobuster: since it&amp;rsquo;s iis server , let&amp;rsquo;s look for aspx extentions: $ gobuster dir -u http://bounty.htb -x aspx -w /usr/share/wordlists/dirb/common.txt -t 20 </description>
+    </item>
+    
+    <item>
+      <title>Sunday HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/sunday/</link>
+      <pubDate>Fri, 30 Apr 2021 00:54:03 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/sunday/</guid>
+      <description>1. Enumeration:  Nmap:   another scan for all the TCP ports:
+ $ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76    Best result: scanning all ports but took too much time $ nmap -p 1-65535 -T4 -A 10.10.10.76 Anyway we have these interesting ports and services:
+ 79	finger 111, 52988	rpcbind 22022	ssh  Let&amp;rsquo;s do some search:
+A finger service is running on this host.</description>
+    </item>
+    
+    <item>
+      <title>Valentine HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/valentine/</link>
+      <pubDate>Fri, 30 Apr 2021 00:53:55 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/valentine/</guid>
+      <description>1. Enumeration:  Nmap:   Web Enumeration:   http(PORT 80)   https(PORT 443) &amp;raquo; gives the same result(the same page and source code)
+  Let&amp;rsquo;s add this hostname (valentine.htb) from nmap to our /etc/hosts file.. visiting the website &amp;raquo; same result nothing different..
+Time for Gobuster:
+ $ gobuster dir -u http://Valentine.htb/ -w /usr/share/wordlists/dirb/common.txt -t 30   </description>
+    </item>
+    
+    <item>
+      <title>Nibbles HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/nibbles/</link>
+      <pubDate>Fri, 30 Apr 2021 00:53:24 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/nibbles/</guid>
+      <description>1. Enumeration:  Nmap:   Web Enumeration:   nothing useful!   let&amp;rsquo;s check the source code:
+  found this comment containg a directory name..   Dirsearch:
+$ python3 ~/dirsearch/dirsearch.py -u http://10.10.10.75/nibbleblog/ -w /usr/share/wordlists/dirb/common.txt -e txt,html,php,log,zip,bac,bak,tar </description>
+    </item>
+    
+    <item>
+      <title>Bashed HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/bashed/</link>
+      <pubDate>Fri, 30 Apr 2021 00:53:16 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/bashed/</guid>
+      <description>1. Enumeration:  Nmap:   Web Enumeration: </description>
+    </item>
+    
+    <item>
+      <title>Sense HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/sense/</link>
+      <pubDate>Fri, 30 Apr 2021 00:53:02 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/sense/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Shocker HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/shocker/</link>
+      <pubDate>Fri, 30 Apr 2021 00:52:49 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/shocker/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Mirai HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/mirai/</link>
+      <pubDate>Fri, 30 Apr 2021 00:52:39 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/mirai/</guid>
+      <description>SYNOPSIS: Mirai demonstrates one of the fastest-growing attack vectors in modern times; improperly configured IoT devices. This attack vector is constantly rising as more and more IOT devices are being created and deployed around the globe, and is actively being exploited by a wide variety of botnets. Internal IoT devices are also being used for long-term persistence by malicious actors.  1. Enumeration:  Nmap:   Nmap reveals several open services: OpenSSH, a DNS server, a lighttpd server, and a Plex media server with accompanying UPnP servers.</description>
+    </item>
+    
+    <item>
+      <title>Blue HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/blue/</link>
+      <pubDate>Fri, 30 Apr 2021 00:52:29 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/blue/</guid>
+      <description>Blue, while possibly the most simple machine on Hack The Box, demonstrates the severity of the EternalBlue exploit, which has been used in multiple large-scale ransomware and crypto-mining attacks since it was leaked publicly.
+1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Blocky HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/blocky/</link>
+      <pubDate>Fri, 30 Apr 2021 00:52:16 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/blocky/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
     <item>
       <title>Bank HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/bank/</link>
@@ -31,6 +155,15 @@
       <pubDate>Mon, 12 Apr 2021 11:37:31 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/2021/grandpa/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Arctic HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/arctic/</link>
+      <pubDate>Mon, 12 Apr 2021 11:37:21 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/arctic/</guid>
       <description>1. Enumeration:  Nmap:   </description>
     </item>
     

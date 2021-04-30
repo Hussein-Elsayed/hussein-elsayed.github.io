@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>active directory on Wh1rlw1nd</title>
+    <link>https://hussein-elsayed.github.io/tags/active-directory/</link>
+    <description>Recent content in active directory on Wh1rlw1nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 30 Apr 2021 00:55:54 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/active-directory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>P.O.O Endgame HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/poo/</link>
+      <pubDate>Fri, 30 Apr 2021 00:55:54 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/poo/</guid>
+      <description>As you see endgame type consists of more than one machine connected to each other and the flags are devided on specific steps..
+1. Enumeration:  Nmap: $ nmap -sV -sC -A 10.13.38.11 -Pn   Web Enumeration:  PORT 80 iis default page..   Nikto:
+ simple web vuln scanner $ nikto -h 10.13.38.11   nikto revealed a .DS_Store file in the server&amp;rsquo;s root folder.
+The DS_Store, or Desktop Services Store is a hidden file use by Mac OS X.</description>
+    </item>
+    
+  </channel>
+</rss>
