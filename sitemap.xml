@@ -2,6 +2,384 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://hussein-elsayed.github.io/tags/hackthebox/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/linux/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/openadmin/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/posts/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/retired/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/writeups/</loc>
+      
+      <lastmod>2021-05-01T04:31:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/apt/</loc>
+      
+      <lastmod>2021-05-01T04:31:09+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/insane/</loc>
+      
+      <lastmod>2021-05-01T04:31:09+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/windows/</loc>
+      
+      <lastmod>2021-05-01T04:31:09+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/bucket/</loc>
+      
+      <lastmod>2021-05-01T04:31:01+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/medium/</loc>
+      
+      <lastmod>2021-05-01T04:31:01+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/jewel/</loc>
+      
+      <lastmod>2021-05-01T04:30:46+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/hard/</loc>
+      
+      <lastmod>2021-05-01T04:30:39+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/reel2/</loc>
+      
+      <lastmod>2021-05-01T04:30:39+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/passage/</loc>
+      
+      <lastmod>2021-05-01T04:30:26+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/feline/</loc>
+      
+      <lastmod>2021-05-01T04:30:17+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/admirer/</loc>
+      
+      <lastmod>2021-05-01T04:28:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/easy/</loc>
+      
+      <lastmod>2021-05-01T04:28:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/tabby/</loc>
+      
+      <lastmod>2021-05-01T04:28:33+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/buff/</loc>
+      
+      <lastmod>2021-05-01T04:28:09+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/academy/</loc>
+      
+      <lastmod>2021-05-01T04:27:56+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/doctor/</loc>
+      
+      <lastmod>2021-05-01T04:27:49+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/laboratory/</loc>
+      
+      <lastmod>2021-05-01T04:27:33+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/iot/</loc>
+      
+      <lastmod>2021-05-01T04:27:17+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/2021/omni/</loc>
+      
+      <lastmod>2021-05-01T04:27:17+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
       <loc>https://hussein-elsayed.github.io/tags/active-directory/</loc>
       
       <lastmod>2021-04-30T00:55:54+02:00</lastmod>
@@ -16,21 +394,7 @@
     </url>
   
     <url>
-      <loc>https://hussein-elsayed.github.io/tags/endgame/</loc>
-      
-      <lastmod>2021-04-30T00:55:54+02:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://hussein-elsayed.github.io/tags/hackthebox/</loc>
+      <loc>https://hussein-elsayed.github.io/tags/endgames/</loc>
       
       <lastmod>2021-04-30T00:55:54+02:00</lastmod>
       
@@ -45,76 +409,6 @@
   
     <url>
       <loc>https://hussein-elsayed.github.io/2021/poo/</loc>
-      
-      <lastmod>2021-04-30T00:55:54+02:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://hussein-elsayed.github.io/posts/</loc>
-      
-      <lastmod>2021-04-30T00:55:54+02:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://hussein-elsayed.github.io/tags/retired/</loc>
-      
-      <lastmod>2021-04-30T00:55:54+02:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://hussein-elsayed.github.io/tags/</loc>
-      
-      <lastmod>2021-04-30T00:55:54+02:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://hussein-elsayed.github.io/</loc>
-      
-      <lastmod>2021-04-30T00:55:54+02:00</lastmod>
-      
-      
-      <changefreq>monthly</changefreq>
-      
-      
-      <priority>0.5</priority>
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://hussein-elsayed.github.io/tags/writeups/</loc>
       
       <lastmod>2021-04-30T00:55:54+02:00</lastmod>
       
@@ -145,6 +439,20 @@
       <loc>https://hussein-elsayed.github.io/2021/bounty/</loc>
       
       <lastmod>2021-04-30T00:54:09+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/solaris/</loc>
+      
+      <lastmod>2021-04-30T00:54:03+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>
@@ -201,6 +509,20 @@
       <loc>https://hussein-elsayed.github.io/2021/bashed/</loc>
       
       <lastmod>2021-04-30T00:53:16+02:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://hussein-elsayed.github.io/tags/freebsd/</loc>
+      
+      <lastmod>2021-04-30T00:53:02+02:00</lastmod>
       
       
       <changefreq>monthly</changefreq>

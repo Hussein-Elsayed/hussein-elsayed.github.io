@@ -6,7 +6,141 @@
     <description>Recent content in Posts on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Apr 2021 00:55:54 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 May 2021 04:31:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAdmin HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/openadmin/</link>
+      <pubDate>Sat, 01 May 2021 04:31:49 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/openadmin/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>APT HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/apt/</link>
+      <pubDate>Sat, 01 May 2021 04:31:09 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/apt/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Bucket HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/bucket/</link>
+      <pubDate>Sat, 01 May 2021 04:31:01 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/bucket/</guid>
+      <description>1. Enumeration:  Nmap scan:   from nmap &amp;raquo; let&amp;rsquo;s add bucket.htb to our /etc/hosts file </description>
+    </item>
+    
+    <item>
+      <title>Jewel HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/jewel/</link>
+      <pubDate>Sat, 01 May 2021 04:30:46 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/jewel/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Reel2 HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/reel2/</link>
+      <pubDate>Sat, 01 May 2021 04:30:39 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/reel2/</guid>
+      <description>1. Enumeration:  Nmap scan:   http(80), https(443), http-proxy(8080) are open
+Web Enumeration:   PORT 80:   PORT 443:   PORT 8080:   Gobuster:
+$ gobuster dir -u https://reel2.htb/ -w /usr/share/dirb/wordlists/big.txt -b 404,403 -k /ews (Status: 301) /exchange (Status: 302) /exchweb (Status: 302) /owa (Status: 301) /public (Status: 302) /rpc (Status: 401) /owa &amp;raquo; outlook web app and needs login creds: lets get back to 8080 and signup lets gather all the usernames here:</description>
+    </item>
+    
+    <item>
+      <title>Passage HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/passage/</link>
+      <pubDate>Sat, 01 May 2021 04:30:26 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/passage/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Feline HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/feline/</link>
+      <pubDate>Sat, 01 May 2021 04:30:17 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/feline/</guid>
+      <description>1. Enumeration:  Nmap scan:  PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA) | 256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA) |_ 256 18💿9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519) 8080/tcp open http Apache Tomcat 9.0.27 |_http-title: VirusBucket Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel let&amp;rsquo;s add this VirusBucket to our hostnames: Web Enumeration:  PORT 8080:   </description>
+    </item>
+    
+    <item>
+      <title>Admirer HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/admirer/</link>
+      <pubDate>Sat, 01 May 2021 04:28:49 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/admirer/</guid>
+      <description>1. Enumeration:  Nmap scan:   Web Enumeration:
+checking robots.txt &amp;raquo; found this /admin-dir visiting /admin-dir/credentials.txt
+[Internal mail account] w.cooper@admirer.htb fgJr6q#S\W:$P [FTP account] ftpuser %n?4Wz}R$tTF7 [Wordpress account] admin w0rdpr3ss01! Gobuster:
+$gobuster dir -w /usr/share/golismero/wordlist/fuzzdb/Discovery/PredictableRes/raft-medium-directories.txt -u 10.10.10.187/admin-dir/ -x php,txt -s 200 revealed this /contacts.txt
+########## # admins # ########## # Penny Email: p.wise@admirer.htb ############## # developers # ############## # Rajesh Email: r.nayyar@admirer.htb # Amy Email: a.bialik@admirer.htb # Leonard Email: l.galecki@admirer.htb ############# # designers # ############# # Howard Email: h.</description>
+    </item>
+    
+    <item>
+      <title>Tabby HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/tabby/</link>
+      <pubDate>Sat, 01 May 2021 04:28:33 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/tabby/</guid>
+      <description>1. Enumeration:  Nmap scan:   Web Enumeration:   PORT 80:   PORT 8080:   tomcat is running and this is its initial page getting to port 80:
+The url looks very suspicious because it including the statement file in a lfi way local file inclusion:
+ view-source:http://10.10.10.194/news.php?file=../../../../../../../../../etc/passwd   As I found LFI vulnerability then my next step is to find a way by which we can perform Remote Code execution on target machine through which we can open a shell on our PC to access the machine.</description>
+    </item>
+    
+    <item>
+      <title>Buff HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/buff/</link>
+      <pubDate>Sat, 01 May 2021 04:28:09 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/buff/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Academy HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/academy/</link>
+      <pubDate>Sat, 01 May 2021 04:27:56 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/academy/</guid>
+      <description>1. Enumeration:  Nmap scan:   let&amp;rsquo;s add academy.htb to our hostnames: Wfuzz: $ wfuzz -u http://academy.htb/FUZZ.php -w /usr/share/dirb/wordlists/common.txt --hc 404,403 -t 100 </description>
+    </item>
+    
+    <item>
+      <title>Doctor HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/doctor/</link>
+      <pubDate>Sat, 01 May 2021 04:27:49 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/doctor/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Laboratory HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/laboratory/</link>
+      <pubDate>Sat, 01 May 2021 04:27:33 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/laboratory/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Omni HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/omni/</link>
+      <pubDate>Sat, 01 May 2021 04:27:17 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/omni/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
     <item>
       <title>P.O.O Endgame HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/poo/</link>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>insane on Wh1rlw1nd</title>
+    <link>https://hussein-elsayed.github.io/tags/insane/</link>
+    <description>Recent content in insane on Wh1rlw1nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 May 2021 04:31:09 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/insane/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>APT HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/apt/</link>
+      <pubDate>Sat, 01 May 2021 04:31:09 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/apt/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>CrossFit HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/crossfit/</link>
+      <pubDate>Wed, 31 Mar 2021 15:35:44 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/crossfit/</guid>
+      <description>Hello guys, crossfit has retired today and here&amp;rsquo;s its walkthrough.
+It&amp;rsquo;s an amazing box; it contains lots of ideas. hope you enjoy it.
+1. Enumeration:  Our Nmap scan as usual:  $ nmap -sC -sV 10.10.10.208 PORT STATE SERVICE VERSION 21/tcp open ftp vsftpd 2.0.8 or later | ssl-cert: Subject: commonName=*.crossfit.htb/organizationName=Cross Fit Ltd./stateOrProvinceName=NY/countryName=US | Not valid before: 2020-04-30T19:16:46 |_Not valid after: 3991-08-16T19:16:46 |_ssl-date: TLS randomness does not represent time 22/tcp open ssh OpenSSH 7.</description>
+    </item>
+    
+  </channel>
+</rss>

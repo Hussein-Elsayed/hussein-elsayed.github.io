@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>medium on Wh1rlw1nd</title>
+    <link>https://hussein-elsayed.github.io/tags/medium/</link>
+    <description>Recent content in medium on Wh1rlw1nd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 May 2021 04:31:01 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bucket HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/bucket/</link>
+      <pubDate>Sat, 01 May 2021 04:31:01 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/bucket/</guid>
+      <description>1. Enumeration:  Nmap scan:   from nmap &amp;raquo; let&amp;rsquo;s add bucket.htb to our /etc/hosts file </description>
+    </item>
+    
+    <item>
+      <title>Jewel HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/jewel/</link>
+      <pubDate>Sat, 01 May 2021 04:30:46 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/jewel/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Passage HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/passage/</link>
+      <pubDate>Sat, 01 May 2021 04:30:26 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/passage/</guid>
+      <description>1. Enumeration:  Nmap scan:   </description>
+    </item>
+    
+    <item>
+      <title>Time HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/time/</link>
+      <pubDate>Fri, 26 Mar 2021 04:42:47 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/time/</guid>
+      <description>Time is a medium machine retired today, but i think it&amp;rsquo;s an easy and straight forward one. enjoy ..
+1. Enumeration:   Nmap scan:
+  nmap -sC -sV 10.10.10.214     Web Enumeration:
+ let&amp;rsquo;s check out the running web server:     And the source code: Nothing interesting in the source code.
+  let&amp;rsquo;s search for hidden directories:
+  $ python3 dirsearch.</description>
+    </item>
+    
+  </channel>
+</rss>

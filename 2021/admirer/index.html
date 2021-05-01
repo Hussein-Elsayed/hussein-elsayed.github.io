@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://hussein-elsayed.github.io/2021/tabby/" />
+  <link rel="next" href="https://hussein-elsayed.github.io/2021/feline/" />
+  <link rel="canonical" href="https://hussein-elsayed.github.io/2021/admirer/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Admirer HTB Writeup | Wh1rlw1nd
+       
+  </title>
+  <meta name="title" content="Admirer HTB Writeup | Wh1rlw1nd">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Admirer HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration:  Nmap scan:   Web Enumeration:
+checking robots.txt &raquo; found this /admin-dir visiting /admin-dir/credentials.txt
+[Internal mail account] w.cooper@admirer.htb fgJr6q#S\W:$P [FTP account] ftpuser %n?4Wz}R$tTF7 [Wordpress account] admin w0rdpr3ss01! Gobuster:
+$gobuster dir -w /usr/share/golismero/wordlist/fuzzdb/Discovery/PredictableRes/raft-medium-directories.txt -u 10.10.10.187/admin-dir/ -x php,txt -s 200 revealed this /contacts.txt
+########## # admins # ########## # Penny Email: p.wise@admirer.htb ############## # developers # ############## # Rajesh Email: r.nayyar@admirer.htb # Amy Email: a.bialik@admirer.htb # Leonard Email: l.galecki@admirer.htb ############# # designers # ############# # Howard Email: h."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Admirer HTB Writeup",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/hussein-elsayed.github.io\/2021\/admirer\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/hussein-elsayed.github.io\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  "keywords": "Writeups, hackthebox, retired, easy, linux",
+  "wordcount":  182 ,
+  "url": "https:\/\/hussein-elsayed.github.io\/2021\/admirer\/",
+  "datePublished": "2021-05-01T04:28:49\u002b02:00",
+  "dateModified": "2021-05-01T04:28:49\u002b02:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Wh1rlw1nd",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/hussein-elsayed.github.io\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Wh1rlw1nd"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Posts</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Posts</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Admirer HTB Writeup</h1>
+        <div class="post-meta">
+            Written by <a href="https://hussein-elsayed.github.io/" rel="author">Wh1rlw1nd</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2021-05-01 >1 May 2021</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/1.png" alt="Machine info" class="lazyload"><figcaption class="image-caption">Machine info</figcaption></figure></p>
+<h3 id="1-enumeration">1. Enumeration:</h3>
+<ul>
+<li>Nmap scan:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
+</ul>
+<p>Web Enumeration:</p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>checking robots.txt &raquo; found this <code>/admin-dir</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>visiting <code>/admin-dir/credentials.txt</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Internal mail account]
+w.cooper@admirer.htb
+fgJr6q#S\W:$P
+
+[FTP account]
+ftpuser
+%n?4Wz}R$tTF7
+
+[Wordpress account]
+admin
+w0rdpr3ss01!
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Gobuster:</p>
+<p><code>$gobuster dir -w /usr/share/golismero/wordlist/fuzzdb/Discovery/PredictableRes/raft-medium-directories.txt -u 10.10.10.187/admin-dir/ -x php,txt -s 200</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>revealed this <code>/contacts.txt</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">##########
+# admins #
+##########
+# Penny
+Email: p.wise@admirer.htb
+
+##############
+# developers #
+##############
+# Rajesh
+Email: r.nayyar@admirer.htb
+
+# Amy
+Email: a.bialik@admirer.htb
+
+# Leonard
+Email: l.galecki@admirer.htb
+
+#############
+# designers #
+#############
+# Howard
+Email: h.helberg@admirer.htb
+
+# Bernadette
+Email: b.rauch@admirer.htb
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>FTP enumeration:
+logging in with ftpuser and password: <code>%n?4Wz}R$tTF7</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>login succeeded , let&rsquo;s dump these files:</p>
+<p><code>$ wget --user ftpuser --password '%n?4Wz}R$tTF7' -m ftp://10.10.10.187</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>So we downloaded the files <code>dump.sql</code> and <code>html.tar.gz</code></p>
+<ul>
+<li>dump.sql &raquo; has nothing useful</li>
+</ul>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<ul>
+<li>index.php:</li>
+</ul>
+<pre><code>$servername = &quot;localhost&quot;;
+                        $username = &quot;waldo&quot;;
+                        $password = &quot;]F7jLHw:*G&gt;UPrTo}~A&quot;d6b&quot;;
+                        $dbname = &quot;admirerdb&quot;;
+</code></pre><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<ul>
+<li>looking in <code>w4ld0s_s3cr3t_d1r</code>:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Bank Account]
+waldo.11
+Ezy]m27}OREc$
+
+[Internal mail account]
+w.cooper@admirer.htb
+fgJr6q#S\W:$P
+
+[FTP account]
+ftpuser
+%n?4Wz}R$tTF7
+
+[Wordpress account]
+admin
+w0rdpr3ss01!
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/14.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>looking in <code>/utility-scripts/db_admin.php</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$servername = &#34;localhost&#34;;
+  $username = &#34;waldo&#34;;
+  $password = &#34;Wh3r3_1s_w4ld0?&#34;;
+</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/15.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>checking <code>/utility-scripts</code>:
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/16.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>Gobuster again:</p>
+<p><code>$ gobuster dir -u http://10.10.10.187/utility-scripts/ -w /usr/share/dirb/wordlists/big.txt -t 30 -x php,txt -s 200</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/17.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p>found this <code>/adminer</code>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/18.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/19.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Wh1rlw1nd </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>182</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fadmirer%2f&amp;text=Admirer%20HTB%20Writeup&amp;via=Wh1r1w1nd" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fadmirer%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fhussein-elsayed.github.io%2f2021%2fadmirer%2f&amp;title=Admirer%20HTB%20Writeup" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-icon-tag"></i>Tag: 
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/writeups/">
+                    #Writeups</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/hackthebox/">
+                    #hackthebox</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/retired/">
+                    #retired</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/easy/">
+                    #easy</a></span>
+            
+            <span class="tag"><a href="https://hussein-elsayed.github.io/tags/linux/">
+                    #linux</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://hussein-elsayed.github.io/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://hussein-elsayed.github.io/2021/tabby/" class="prev" rel="prev" title="Tabby HTB Writeup"><i class="iconfont icon-dajiantou"></i>&nbsp;Tabby HTB Writeup</a>
+         
+        
+        <a href="https://hussein-elsayed.github.io/2021/feline/" class="next" rel="next" title="Feline HTB Writeup">Feline HTB Writeup&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'disqus_NIRv8ve7PS';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2020 - 2021</span>
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <link crossorigin="anonymous" integrity="sha384-yziQACfvCVwLqVFLqkWBYRO3XeA4EqzfXKGwaWnenYn5XzqfJFlFdKEmvutIQdKb" href="https://lib.baomitu.com/lightgallery/1.6.12/css/lightgallery.min.css" rel="stylesheet">
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>
