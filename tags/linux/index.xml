@@ -6,7 +6,25 @@
     <description>Recent content in linux on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 May 2021 04:31:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 May 2021 06:03:09 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Frolic HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/frolic/</link>
+      <pubDate>Thu, 06 May 2021 06:03:09 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/frolic/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
+    <item>
+      <title>Irked HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/irked/</link>
+      <pubDate>Thu, 06 May 2021 06:01:20 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/irked/</guid>
+      <description>1. Enumeration:  Nmap:   </description>
+    </item>
+    
     <item>
       <title>OpenAdmin HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/openadmin/</link>
