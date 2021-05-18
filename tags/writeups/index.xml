@@ -6,7 +6,19 @@
     <description>Recent content in Writeups on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 May 2021 06:03:09 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 May 2021 19:32:32 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ready HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/ready/</link>
+      <pubDate>Mon, 17 May 2021 19:32:32 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/ready/</guid>
+      <description>1. Enumeration:  Nmap:   Web Enumeration:   PORT 5080: Got gitlab login form   let&amp;rsquo;s sign up: and we &amp;rsquo;re in: checking /help :
+ it&amp;rsquo;s gitlab version 11.4.7   Searching for exploits:
+  got public one from exploitdb   let&amp;rsquo;s download and edit the exploit:
+  As i remember it didn&amp;rsquo;t work properly (there are some new versions of this exploit on exploitdb now) and i used another exploit from github back then</description>
+    </item>
+    
     <item>
       <title>Frolic HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/frolic/</link>
