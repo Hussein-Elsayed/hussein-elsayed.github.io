@@ -6,7 +6,21 @@
     <description>Recent content in easy on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 May 2021 06:03:09 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/easy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 May 2021 00:36:53 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/easy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Delivery HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/delivery/</link>
+      <pubDate>Mon, 24 May 2021 00:36:53 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/delivery/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services $ nmap -sC -sV 10.10.10.222   so simply we got only ssh (port 22), web server (port 80)
+2. Web Enumeration: press ctrl+u &amp;raquo; to check page source code
+so we got these hostnames: http://delivery.htb:8065/ and http://helpdesk.delivery.htb/
+  let&amp;rsquo;s add them to our /etc/hosts file..
+  10.10.10.222	helpdesk.delivery.htb	delivery.htb
+  </description>
+    </item>
+    
     <item>
       <title>Frolic HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/frolic/</link>
