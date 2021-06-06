@@ -6,7 +6,18 @@
     <description>Recent content in linux on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 24 May 2021 00:36:53 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Jun 2021 03:20:36 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scriptkiddie HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/scriptkiddie/</link>
+      <pubDate>Sat, 05 Jun 2021 03:20:36 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/scriptkiddie/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.226    So we got ssh on (port 22) and a Werkzeug httpd server on (port 5000)
+2. Web Enumeration:   Got this interesting page &amp;hellip;   It makes some functions like searchsploit or making nmap scan on IPs, also making metasploit payloads!
+  The interesting part When generating any windows or linux payload, we discover a /static/payloads/name.</description>
+    </item>
+    
     <item>
       <title>Delivery HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/delivery/</link>

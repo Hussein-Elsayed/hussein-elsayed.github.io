@@ -6,7 +6,19 @@
     <description>Recent content in hard on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 May 2021 04:30:39 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 08:27:20 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/hard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cereal HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/cereal/</link>
+      <pubDate>Sat, 29 May 2021 08:27:20 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/cereal/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services $ nmap -sC -sV 10.10.10.217   So Three ports are opened 22:ssh 80:http 443:https
+There are two domain names in nmap result(DNS:cereal.htb, DNS:source.cereal.htb), Let&amp;rsquo;s add them in our /etc/hosts file: 2. Web Enumeration:   cereal.htb
+ There is a simple login page:     source.cereal.htb
+ gives us an error page contains path of file(C:\inetpub\source\default.aspx):     Gobuster or dirsearch:</description>
+    </item>
+    
     <item>
       <title>Reel2 HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/reel2/</link>
