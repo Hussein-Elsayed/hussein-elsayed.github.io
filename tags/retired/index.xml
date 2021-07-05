@@ -6,7 +6,46 @@
     <description>Recent content in retired on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Jun 2021 03:20:36 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/retired/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 14:23:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/retired/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ophiuchi HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/ophiuchi/</link>
+      <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/ophiuchi/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -oA 10.10.10.227   We only got two open ports: ssh on (port 22), apache server on (port 8080)
+2. Web enumeration: let&amp;rsquo;s discover what&amp;rsquo;s running over there..
+and the source code (press ctrl+u) so we got a Yaml parser and nothing interesting in the source code ..
+also try any yaml code u get this page as a response: About yaml &amp;amp; parser thing:   YAML is a human-readable data-serialization language.</description>
+    </item>
+    
+    <item>
+      <title>Spectra HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/spectra/</link>
+      <pubDate>Sat, 26 Jun 2021 12:00:00 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/spectra/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.229   </description>
+    </item>
+    
+    <item>
+      <title>Tentacle HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/tentacle/</link>
+      <pubDate>Sun, 20 Jun 2021 11:59:31 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/tentacle/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A -T4 10.10.10.224 -Pn   </description>
+    </item>
+    
+    <item>
+      <title>Tenet HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/tenet/</link>
+      <pubDate>Mon, 14 Jun 2021 03:43:11 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/tenet/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.223   Web Enumeration:  just the apache default page   </description>
+    </item>
+    
     <item>
       <title>Scriptkiddie HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/scriptkiddie/</link>

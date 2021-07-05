@@ -6,7 +6,28 @@
     <description>Recent content in medium on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 May 2021 19:32:32 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 14:23:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ophiuchi HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/ophiuchi/</link>
+      <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/ophiuchi/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -oA 10.10.10.227   We only got two open ports: ssh on (port 22), apache server on (port 8080)
+2. Web enumeration: let&amp;rsquo;s discover what&amp;rsquo;s running over there..
+and the source code (press ctrl+u) so we got a Yaml parser and nothing interesting in the source code ..
+also try any yaml code u get this page as a response: About yaml &amp;amp; parser thing:   YAML is a human-readable data-serialization language.</description>
+    </item>
+    
+    <item>
+      <title>Tenet HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/tenet/</link>
+      <pubDate>Mon, 14 Jun 2021 03:43:11 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/tenet/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.223   Web Enumeration:  just the apache default page   </description>
+    </item>
+    
     <item>
       <title>Ready HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/ready/</link>
