@@ -6,11 +6,20 @@
     <description>Recent content in Tags on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Jul 2021 14:23:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 19:04:01 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>easy</title>
+      <link>https://hussein-elsayed.github.io/tags/easy/</link>
+      <pubDate>Mon, 02 Aug 2021 19:04:01 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/tags/easy/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>hackthebox</title>
       <link>https://hussein-elsayed.github.io/tags/hackthebox/</link>
-      <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
+      <pubDate>Mon, 02 Aug 2021 19:04:01 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/tags/hackthebox/</guid>
       <description></description>
@@ -19,9 +28,36 @@
     <item>
       <title>linux</title>
       <link>https://hussein-elsayed.github.io/tags/linux/</link>
-      <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
+      <pubDate>Mon, 02 Aug 2021 19:04:01 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>retired</title>
+      <link>https://hussein-elsayed.github.io/tags/retired/</link>
+      <pubDate>Mon, 02 Aug 2021 19:04:01 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/tags/retired/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Writeups</title>
+      <link>https://hussein-elsayed.github.io/tags/writeups/</link>
+      <pubDate>Mon, 02 Aug 2021 19:04:01 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/tags/writeups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://hussein-elsayed.github.io/tags/windows/</link>
+      <pubDate>Mon, 02 Aug 2021 19:03:34 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -31,33 +67,6 @@
       <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/tags/medium/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>retired</title>
-      <link>https://hussein-elsayed.github.io/tags/retired/</link>
-      <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
-      
-      <guid>https://hussein-elsayed.github.io/tags/retired/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Writeups</title>
-      <link>https://hussein-elsayed.github.io/tags/writeups/</link>
-      <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
-      
-      <guid>https://hussein-elsayed.github.io/tags/writeups/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>easy</title>
-      <link>https://hussein-elsayed.github.io/tags/easy/</link>
-      <pubDate>Sat, 26 Jun 2021 12:00:00 +0200</pubDate>
-      
-      <guid>https://hussein-elsayed.github.io/tags/easy/</guid>
       <description></description>
     </item>
     
@@ -76,15 +85,6 @@
       <pubDate>Sun, 20 Jun 2021 11:59:31 +0200</pubDate>
       
       <guid>https://hussein-elsayed.github.io/tags/hard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://hussein-elsayed.github.io/tags/windows/</link>
-      <pubDate>Sat, 29 May 2021 08:27:20 +0200</pubDate>
-      
-      <guid>https://hussein-elsayed.github.io/tags/windows/</guid>
       <description></description>
     </item>
     

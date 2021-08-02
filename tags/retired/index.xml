@@ -6,7 +6,54 @@
     <description>Recent content in retired on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Jul 2021 14:23:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/retired/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 19:04:01 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/retired/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Traverxec HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/traverxec/</link>
+      <pubDate>Mon, 02 Aug 2021 19:04:01 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/traverxec/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.165 -Pn   2. Web Enumeration: Dirsearch: $ python3 ~/dirsearch/dirsearch.py -u http://10.10.10.165/ -w /usr/share/wordlists/dirb/common.txt -e txt,html,php,log,zip,bac,bak,tar nostromo 1.9.6: nostromo web server and it seems to be vulnerable and has public exploits </description>
+    </item>
+    
+    <item>
+      <title>Forest HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/forest/</link>
+      <pubDate>Mon, 02 Aug 2021 19:03:34 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/forest/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.161 -Pn   PORT STATE SERVICE VERSION 53/tcp open domain Simple DNS Plus 88/tcp open kerberos-sec? 135/tcp open msrpc? 139/tcp open netbios-ssn? 389/tcp open ldap Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name) 445/tcp open microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB) 464/tcp open kpasswd5? 593/tcp open ncacn_http Microsoft Windows RPC over HTTP 1.</description>
+    </item>
+    
+    <item>
+      <title>Heist HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/heist/</link>
+      <pubDate>Mon, 02 Aug 2021 19:03:27 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/heist/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -o nmapscan 10.10.10.149   let&amp;rsquo;s add it to our /etc/hosts file 2. Web Enumeration: tried admin:password but it asks for email not username , tried admin@htb , gave this error page: let&amp;rsquo;s try login as guest: so we got user hazard asking the admin a question and this interesting attachment (config file) &amp;gt; let&amp;rsquo;s check it: security passwords min-length 12 enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91 username rout3r password 7 0242114B0E143F015F5D1E161713 username admin privilege 15 password 7 02375012182C1A1D751618034F36415408 another nmap scan shows two other open ports: $ nmap -sV -sT -p- -o fullportscan heist.</description>
+    </item>
+    
+    <item>
+      <title>Writeup HTB Walkthrough</title>
+      <link>https://hussein-elsayed.github.io/2021/writeup/</link>
+      <pubDate>Mon, 02 Aug 2021 19:03:08 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/writeup/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sV -sT -sC -o nmapscan 10.10.10.138   adding the ip to our /etc/hosts file: </description>
+    </item>
+    
+    <item>
+      <title>Bastion HTB Writeup</title>
+      <link>https://hussein-elsayed.github.io/2021/bastion/</link>
+      <pubDate>Mon, 02 Aug 2021 19:02:58 +0200</pubDate>
+      
+      <guid>https://hussein-elsayed.github.io/2021/bastion/</guid>
+      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.134 -Pn   so we got
+ssh on 22 RPC on 135 netbios-ssn on 139 microsoft-ds on 445 about these ports
+adding it to our /etc/hosts file </description>
+    </item>
+    
     <item>
       <title>Ophiuchi HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/ophiuchi/</link>
