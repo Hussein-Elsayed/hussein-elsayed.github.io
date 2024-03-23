@@ -34,12 +34,12 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="P.O.O Endgame HTB Writeup"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="P.O.O Endgame HTB Writeup"/>
 <meta name="twitter:description" content="As you see endgame type consists of more than one machine connected to each other and the flags are devided on specific steps..
-1. Enumeration:  Nmap: $ nmap -sV -sC -A 10.13.38.11 -Pn   Web Enumeration:  PORT 80 iis default page..   Nikto:
- simple web vuln scanner $ nikto -h 10.13.38.11   nikto revealed a .DS_Store file in the server&rsquo;s root folder.
+1. Enumeration: Nmap: $ nmap -sV -sC -A 10.13.38.11 -Pn Web Enumeration: PORT 80 iis default page.. Nikto:
+simple web vuln scanner $ nikto -h 10.13.38.11 nikto revealed a .DS_Store file in the server&rsquo;s root folder.
 The DS_Store, or Desktop Services Store is a hidden file use by Mac OS X."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -184,11 +184,11 @@ The DS_Store, or Desktop Services Store is a hidden file use by Mac OS X."/>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/poo/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 </ul>
 <p>nikto revealed a <code>.DS_Store</code> file in the server&rsquo;s root folder.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">The DS_Store, or
-Desktop Services Store is a hidden file use by Mac OS X. This file is used to store various 
-attributes about the folder such as icons or sub-folder names. This file can reveal sensitive
-information such as the folder structure and contained files.
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>The DS_Store, or
+</span></span><span style="display:flex;"><span>Desktop Services Store is a hidden file use by Mac OS X. This file is used to store various 
+</span></span><span style="display:flex;"><span>attributes about the folder such as icons or sub-folder names. This file can reveal sensitive
+</span></span><span style="display:flex;"><span>information such as the folder structure and contained files.
+</span></span></code></pre></div><ul>
 <li>visiting <code>http://10.13.38.11/.DS_Store</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/poo/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 </ul>
@@ -381,7 +381,7 @@ POO{fcfb0767f5bd3cbc22f40ff5011ad555}</p>
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

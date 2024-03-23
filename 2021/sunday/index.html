@@ -34,12 +34,12 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Sunday HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap:   another scan for all the TCP ports:
- $ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76    Best result: scanning all ports but took too much time $ nmap -p 1-65535 -T4 -A 10.10.10.76 Anyway we have these interesting ports and services:
- 79	finger 111, 52988	rpcbind 22022	ssh  Let&rsquo;s do some search:
-A finger service is running on this host."/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Sunday HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap: another scan for all the TCP ports:
+$ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76 Best result: scanning all ports but took too much time $ nmap -p 1-65535 -T4 -A 10.10.10.76 Anyway we have these interesting ports and services:
+79	finger 111, 52988	rpcbind 22022	ssh Let&rsquo;s do some search:
+A finger service is running on this host. The finger protocol is used to find out information about users on a remote system."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -375,7 +375,7 @@ scanning all ports but took too much time
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

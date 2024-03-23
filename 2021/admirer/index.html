@@ -34,13 +34,13 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Admirer HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap scan:   Web Enumeration:
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Admirer HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap scan: Web Enumeration:
 checking robots.txt &raquo; found this /admin-dir visiting /admin-dir/credentials.txt
 [Internal mail account] w.cooper@admirer.htb fgJr6q#S\W:$P [FTP account] ftpuser %n?4Wz}R$tTF7 [Wordpress account] admin w0rdpr3ss01! Gobuster:
 $gobuster dir -w /usr/share/golismero/wordlist/fuzzdb/Discovery/PredictableRes/raft-medium-directories.txt -u 10.10.10.187/admin-dir/ -x php,txt -s 200 revealed this /contacts.txt
 ########## # admins # ########## # Penny Email: p.wise@admirer.htb ############## # developers # ############## # Rajesh Email: r.nayyar@admirer.htb # Amy Email: a.bialik@admirer.htb # Leonard Email: l.galecki@admirer.htb ############# # designers # ############# # Howard Email: h."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -175,50 +175,50 @@ $gobuster dir -w /usr/share/golismero/wordlist/fuzzdb/Discovery/PredictableRes/r
 <p>checking robots.txt &raquo; found this <code>/admin-dir</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/4.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>visiting <code>/admin-dir/credentials.txt</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Internal mail account]
-w.cooper@admirer.htb
-fgJr6q#S\W:$P
-
-[FTP account]
-ftpuser
-%n?4Wz}R$tTF7
-
-[Wordpress account]
-admin
-w0rdpr3ss01!
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[Internal mail account]
+</span></span><span style="display:flex;"><span>w.cooper@admirer.htb
+</span></span><span style="display:flex;"><span>fgJr6q#S\W:$P
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[FTP account]
+</span></span><span style="display:flex;"><span>ftpuser
+</span></span><span style="display:flex;"><span>%n?4Wz}R$tTF7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[Wordpress account]
+</span></span><span style="display:flex;"><span>admin
+</span></span><span style="display:flex;"><span>w0rdpr3ss01!
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>Gobuster:</p>
 <p><code>$gobuster dir -w /usr/share/golismero/wordlist/fuzzdb/Discovery/PredictableRes/raft-medium-directories.txt -u 10.10.10.187/admin-dir/ -x php,txt -s 200</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>revealed this <code>/contacts.txt</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">##########
-# admins #
-##########
-# Penny
-Email: p.wise@admirer.htb
-
-##############
-# developers #
-##############
-# Rajesh
-Email: r.nayyar@admirer.htb
-
-# Amy
-Email: a.bialik@admirer.htb
-
-# Leonard
-Email: l.galecki@admirer.htb
-
-#############
-# designers #
-#############
-# Howard
-Email: h.helberg@admirer.htb
-
-# Bernadette
-Email: b.rauch@admirer.htb
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>##########
+</span></span><span style="display:flex;"><span># admins #
+</span></span><span style="display:flex;"><span>##########
+</span></span><span style="display:flex;"><span># Penny
+</span></span><span style="display:flex;"><span>Email: p.wise@admirer.htb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>##############
+</span></span><span style="display:flex;"><span># developers #
+</span></span><span style="display:flex;"><span>##############
+</span></span><span style="display:flex;"><span># Rajesh
+</span></span><span style="display:flex;"><span>Email: r.nayyar@admirer.htb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Amy
+</span></span><span style="display:flex;"><span>Email: a.bialik@admirer.htb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Leonard
+</span></span><span style="display:flex;"><span>Email: l.galecki@admirer.htb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#############
+</span></span><span style="display:flex;"><span># designers #
+</span></span><span style="display:flex;"><span>#############
+</span></span><span style="display:flex;"><span># Howard
+</span></span><span style="display:flex;"><span>Email: h.helberg@admirer.htb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Bernadette
+</span></span><span style="display:flex;"><span>Email: b.rauch@admirer.htb
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>FTP enumeration:
 logging in with ftpuser and password: <code>%n?4Wz}R$tTF7</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -234,35 +234,35 @@ logging in with ftpuser and password: <code>%n?4Wz}R$tTF7</code>
 <ul>
 <li>index.php:</li>
 </ul>
-<pre><code>$servername = &quot;localhost&quot;;
-                        $username = &quot;waldo&quot;;
-                        $password = &quot;]F7jLHw:*G&gt;UPrTo}~A&quot;d6b&quot;;
-                        $dbname = &quot;admirerdb&quot;;
+<pre tabindex="0"><code>$servername = &#34;localhost&#34;;
+                        $username = &#34;waldo&#34;;
+                        $password = &#34;]F7jLHw:*G&gt;UPrTo}~A&#34;d6b&#34;;
+                        $dbname = &#34;admirerdb&#34;;
 </code></pre><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>looking in <code>w4ld0s_s3cr3t_d1r</code>:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[Bank Account]
-waldo.11
-Ezy]m27}OREc$
-
-[Internal mail account]
-w.cooper@admirer.htb
-fgJr6q#S\W:$P
-
-[FTP account]
-ftpuser
-%n?4Wz}R$tTF7
-
-[Wordpress account]
-admin
-w0rdpr3ss01!
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/14.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[Bank Account]
+</span></span><span style="display:flex;"><span>waldo.11
+</span></span><span style="display:flex;"><span>Ezy]m27}OREc$
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[Internal mail account]
+</span></span><span style="display:flex;"><span>w.cooper@admirer.htb
+</span></span><span style="display:flex;"><span>fgJr6q#S\W:$P
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[FTP account]
+</span></span><span style="display:flex;"><span>ftpuser
+</span></span><span style="display:flex;"><span>%n?4Wz}R$tTF7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[Wordpress account]
+</span></span><span style="display:flex;"><span>admin
+</span></span><span style="display:flex;"><span>w0rdpr3ss01!
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/14.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>looking in <code>/utility-scripts/db_admin.php</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$servername = &#34;localhost&#34;;
-  $username = &#34;waldo&#34;;
-  $password = &#34;Wh3r3_1s_w4ld0?&#34;;
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/15.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$servername = &#34;localhost&#34;;
+</span></span><span style="display:flex;"><span>  $username = &#34;waldo&#34;;
+</span></span><span style="display:flex;"><span>  $password = &#34;Wh3r3_1s_w4ld0?&#34;;
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/15.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>checking <code>/utility-scripts</code>:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/admirer/16.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>Gobuster again:</p>
@@ -403,7 +403,7 @@ w0rdpr3ss01!
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

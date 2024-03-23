@@ -34,11 +34,11 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CrossFit HTB Writeup"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CrossFit HTB Writeup"/>
 <meta name="twitter:description" content="Hello guys, crossfit has retired today and here&rsquo;s its walkthrough.
 It&rsquo;s an amazing box; it contains lots of ideas. hope you enjoy it.
-1. Enumeration:  Our Nmap scan as usual:  $ nmap -sC -sV 10.10.10.208 PORT STATE SERVICE VERSION 21/tcp open ftp vsftpd 2.0.8 or later | ssl-cert: Subject: commonName=*.crossfit.htb/organizationName=Cross Fit Ltd./stateOrProvinceName=NY/countryName=US | Not valid before: 2020-04-30T19:16:46 |_Not valid after: 3991-08-16T19:16:46 |_ssl-date: TLS randomness does not represent time 22/tcp open ssh OpenSSH 7."/>
+1. Enumeration: Our Nmap scan as usual: $ nmap -sC -sV 10.10.10.208 PORT STATE SERVICE VERSION 21/tcp open ftp vsftpd 2.0.8 or later | ssl-cert: Subject: commonName=*.crossfit.htb/organizationName=Cross Fit Ltd./stateOrProvinceName=NY/countryName=US | Not valid before: 2020-04-30T19:16:46 |_Not valid after: 3991-08-16T19:16:46 |_ssl-date: TLS randomness does not represent time 22/tcp open ssh OpenSSH 7."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -169,25 +169,24 @@ It&rsquo;s an amazing box; it contains lots of ideas. hope you enjoy it.
 <ul>
 <li>Our Nmap scan as usual:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ nmap -sC -sV 10.10.10.208</span>
-
-<span style="color:#ae81ff">PORT   STATE SERVICE VERSION</span>
-<span style="color:#ae81ff">21</span><span style="color:#ae81ff">/tcp open  ftp     vsftpd 2.0.8 or later</span>
-<span style="color:#f92672">| ssl-cert: Subject</span>: <span style="color:#ae81ff">commonName=*.crossfit.htb/organizationName=Cross Fit Ltd./stateOrProvinceName=NY/countryName=US</span>
-<span style="color:#f92672">| Not valid before</span>: <span style="color:#e6db74">2020-04-30T19:16:46</span>
-<span style="color:#f92672">|_Not valid after</span>:  <span style="color:#e6db74">3991-08-16T19:16:46</span>
-<span style="color:#f92672">|_ssl-date</span>: <span style="color:#ae81ff">TLS randomness does not represent time</span>
-<span style="color:#ae81ff">22</span><span style="color:#ae81ff">/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)</span>
-<span style="color:#f92672">| ssh-hostkey</span>: 
-<span style="color:#ae81ff">|   2048 b0:e7:5f:5f:7e:5a:4f:e8:e4:cf:f1:98:01:cb:3f:52 (RSA)</span>
-<span style="color:#ae81ff">|   256 67:88:2d:20:a5:c1:a7:71:50:2b:c8:07:a4:b2:60:e5 (ECDSA)</span>
-<span style="color:#ae81ff">|_  256 62:ce:a3:15:93:c8:8c:b6:8e:23:1d:66:52:f4:4f:ef (ED25519)</span>
-<span style="color:#ae81ff">80</span><span style="color:#ae81ff">/tcp open  http    Apache httpd 2.4.38 ((Debian))</span>
-<span style="color:#f92672">|_http-server-header</span>: <span style="color:#ae81ff">Apache/2.4.38 (Debian)</span>
-<span style="color:#f92672">|_http-title: Apache2 Debian Default Page</span>: <span style="color:#ae81ff">It works</span>
-<span style="color:#f92672">Service Info: Host: Cross; OS: Linux; CPE</span>: <span style="color:#ae81ff">cpe:/o:linux:linux_kernel</span>
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ae81ff">$ nmap -sC -sV 10.10.10.208</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">PORT   STATE SERVICE VERSION</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">21</span><span style="color:#ae81ff">/tcp open  ftp     vsftpd 2.0.8 or later</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">| ssl-cert: Subject</span>: <span style="color:#ae81ff">commonName=*.crossfit.htb/organizationName=Cross Fit Ltd./stateOrProvinceName=NY/countryName=US</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">| Not valid before</span>: <span style="color:#e6db74">2020-04-30T19:16:46</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|_Not valid after</span>:  <span style="color:#e6db74">3991-08-16T19:16:46</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|_ssl-date</span>: <span style="color:#ae81ff">TLS randomness does not represent time</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">22</span><span style="color:#ae81ff">/tcp open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">| ssh-hostkey</span>: 
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">|   2048 b0:e7:5f:5f:7e:5a:4f:e8:e4:cf:f1:98:01:cb:3f:52 (RSA)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">|   256 67:88:2d:20:a5:c1:a7:71:50:2b:c8:07:a4:b2:60:e5 (ECDSA)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">|_  256 62:ce:a3:15:93:c8:8c:b6:8e:23:1d:66:52:f4:4f:ef (ED25519)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">80</span><span style="color:#ae81ff">/tcp open  http    Apache httpd 2.4.38 ((Debian))</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|_http-server-header</span>: <span style="color:#ae81ff">Apache/2.4.38 (Debian)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|_http-title: Apache2 Debian Default Page</span>: <span style="color:#ae81ff">It works</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Service Info: Host: Cross; OS: Linux; CPE</span>: <span style="color:#ae81ff">cpe:/o:linux:linux_kernel</span>
+</span></span></code></pre></div><ul>
 <li>From the scan: <code>commonName=*.crossfit.htb/organizationName=Cross</code></li>
 </ul>
 <p>So let&rsquo;s add this host name to our /etc/hosts file</p>
@@ -206,14 +205,14 @@ just a regular apache server default page:
 <p>let&rsquo;s see if there are hidden directories:</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ python3 /home/sehs/dirsearch/dirsearch.py -u http://crossfit.htb -w /usr/share/dirb/wordlists/big.txt -e txt,html,php,log,zip,bac,bak,tar
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/crossfit/5.png" alt="Found nothing" class="lazyload"><figcaption class="image-caption">Found nothing</figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ python3 /home/sehs/dirsearch/dirsearch.py -u http://crossfit.htb -w /usr/share/dirb/wordlists/big.txt -e txt,html,php,log,zip,bac,bak,tar
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/crossfit/5.png" alt="Found nothing" class="lazyload"><figcaption class="image-caption">Found nothing</figcaption></figure></p>
 <h3 id="lets-enumerate-that-ftp-port-21">let&rsquo;s enumerate that FTP (port 21):</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ nmap -p 21 --script=ftp* -oN ftpnmap.txt crossfit.htb
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/crossfit/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ nmap -p 21 --script=ftp* -oN ftpnmap.txt crossfit.htb
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/crossfit/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>further enumeration on port 21:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ nmap -sC -sV -p 21 -vvv 10.10.10.208
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/crossfit/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ nmap -sC -sV -p 21 -vvv 10.10.10.208
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/crossfit/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 Found this <code>info@gym-club.crossfit.htb</code> &raquo; so there&rsquo;s a host named <code>gym-club.crossfit.htb</code></p>
 <ul>
 <li>
@@ -363,7 +362,7 @@ Found this <code>info@gym-club.crossfit.htb</code> &raquo; so there&rsquo;s a ho
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

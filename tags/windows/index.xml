@@ -6,196 +6,140 @@
     <description>Recent content in windows on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Aug 2021 19:03:34 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 19:03:34 +0200</lastBuildDate>
+    <atom:link href="https://hussein-elsayed.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Forest HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/forest/</link>
       <pubDate>Mon, 02 Aug 2021 19:03:34 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/forest/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.161 -Pn   PORT STATE SERVICE VERSION 53/tcp open domain Simple DNS Plus 88/tcp open kerberos-sec? 135/tcp open msrpc? 139/tcp open netbios-ssn? 389/tcp open ldap Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name) 445/tcp open microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB) 464/tcp open kpasswd5? 593/tcp open ncacn_http Microsoft Windows RPC over HTTP 1.</description>
+      <description>1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.161 -Pn PORT STATE SERVICE VERSION 53/tcp open domain Simple DNS Plus 88/tcp open kerberos-sec? 135/tcp open msrpc? 139/tcp open netbios-ssn? 389/tcp open ldap Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name) 445/tcp open microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB) 464/tcp open kpasswd5? 593/tcp open ncacn_http Microsoft Windows RPC over HTTP 1.</description>
     </item>
-    
     <item>
       <title>Heist HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/heist/</link>
       <pubDate>Mon, 02 Aug 2021 19:03:27 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/heist/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -o nmapscan 10.10.10.149   let&amp;rsquo;s add it to our /etc/hosts file 2. Web Enumeration: tried admin:password but it asks for email not username , tried admin@htb , gave this error page: let&amp;rsquo;s try login as guest: so we got user hazard asking the admin a question and this interesting attachment (config file) &amp;gt; let&amp;rsquo;s check it: security passwords min-length 12 enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91 username rout3r password 7 0242114B0E143F015F5D1E161713 username admin privilege 15 password 7 02375012182C1A1D751618034F36415408 another nmap scan shows two other open ports: $ nmap -sV -sT -p- -o fullportscan heist.</description>
+      <description>1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -o nmapscan 10.10.10.149 let&amp;rsquo;s add it to our /etc/hosts file 2. Web Enumeration: tried admin:password but it asks for email not username , tried admin@htb , gave this error page: let&amp;rsquo;s try login as guest: so we got user hazard asking the admin a question and this interesting attachment (config file) &amp;gt; let&amp;rsquo;s check it: security passwords min-length 12 enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91 username rout3r password 7 0242114B0E143F015F5D1E161713 username admin privilege 15 password 7 02375012182C1A1D751618034F36415408 another nmap scan shows two other open ports: $ nmap -sV -sT -p- -o fullportscan heist.</description>
     </item>
-    
     <item>
       <title>Bastion HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/bastion/</link>
       <pubDate>Mon, 02 Aug 2021 19:02:58 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/bastion/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.134 -Pn   so we got
-ssh on 22 RPC on 135 netbios-ssn on 139 microsoft-ds on 445 about these ports
-adding it to our /etc/hosts file </description>
+      <description>&#xA;1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.134 -Pn so we got&#xA;ssh on 22 RPC on 135 netbios-ssn on 139 microsoft-ds on 445 about these ports&#xA;adding it to our /etc/hosts file </description>
     </item>
-    
     <item>
       <title>Cereal HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/cereal/</link>
       <pubDate>Sat, 29 May 2021 08:27:20 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/cereal/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services $ nmap -sC -sV 10.10.10.217   So Three ports are opened 22:ssh 80:http 443:https
-There are two domain names in nmap result(DNS:cereal.htb, DNS:source.cereal.htb), Let&amp;rsquo;s add them in our /etc/hosts file: 2. Web Enumeration:   cereal.htb
- There is a simple login page:     source.cereal.htb
- gives us an error page contains path of file(C:\inetpub\source\default.aspx):     Gobuster or dirsearch:</description>
+      <description>1. Enumeration: Nmap: To scan for open ports and services $ nmap -sC -sV 10.10.10.217 So Three ports are opened 22:ssh 80:http 443:https&#xA;There are two domain names in nmap result(DNS:cereal.htb, DNS:source.cereal.htb), Let&amp;rsquo;s add them in our /etc/hosts file: 2. Web Enumeration: cereal.htb&#xA;There is a simple login page: source.cereal.htb&#xA;gives us an error page contains path of file(C:\inetpub\source\default.aspx): Gobuster or dirsearch:&#xA;$ gobuster dir -u http://source.cereal.htb/ -w /usr/share/ raft-small-words.</description>
     </item>
-    
     <item>
       <title>Jerry HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/jerry/</link>
       <pubDate>Thu, 06 May 2021 06:02:59 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/jerry/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Jeeves HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/jeeves/</link>
       <pubDate>Thu, 06 May 2021 06:02:12 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/jeeves/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>APT HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/apt/</link>
       <pubDate>Sat, 01 May 2021 04:31:09 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/apt/</guid>
-      <description>1. Enumeration:  Nmap scan:   </description>
+      <description>&#xA;1. Enumeration: Nmap scan: </description>
     </item>
-    
     <item>
       <title>Reel2 HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/reel2/</link>
       <pubDate>Sat, 01 May 2021 04:30:39 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/reel2/</guid>
-      <description>1. Enumeration:  Nmap scan:   http(80), https(443), http-proxy(8080) are open
-Web Enumeration:   PORT 80:   PORT 443:   PORT 8080:   Gobuster:
-$ gobuster dir -u https://reel2.htb/ -w /usr/share/dirb/wordlists/big.txt -b 404,403 -k /ews (Status: 301) /exchange (Status: 302) /exchweb (Status: 302) /owa (Status: 301) /public (Status: 302) /rpc (Status: 401) /owa &amp;raquo; outlook web app and needs login creds: lets get back to 8080 and signup lets gather all the usernames here:</description>
+      <description>1. Enumeration: Nmap scan: http(80), https(443), http-proxy(8080) are open&#xA;Web Enumeration: PORT 80: PORT 443: PORT 8080: Gobuster:&#xA;$ gobuster dir -u https://reel2.htb/ -w /usr/share/dirb/wordlists/big.txt -b 404,403 -k /ews (Status: 301) /exchange (Status: 302) /exchweb (Status: 302) /owa (Status: 301) /public (Status: 302) /rpc (Status: 401) /owa &amp;raquo; outlook web app and needs login creds: lets get back to 8080 and signup lets gather all the usernames here:&#xA;admin1 sven svensson cube egre55 cube0x0 lars larsson jeenny adams teresa trump wtf admin lets make a list of them: lets use this python script on names.</description>
     </item>
-    
     <item>
       <title>Buff HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/buff/</link>
       <pubDate>Sat, 01 May 2021 04:28:09 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/buff/</guid>
-      <description>1. Enumeration:  Nmap scan:   </description>
+      <description>&#xA;1. Enumeration: Nmap scan: </description>
     </item>
-    
     <item>
       <title>P.O.O Endgame HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/poo/</link>
       <pubDate>Fri, 30 Apr 2021 00:55:54 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/poo/</guid>
-      <description>As you see endgame type consists of more than one machine connected to each other and the flags are devided on specific steps..
-1. Enumeration:  Nmap: $ nmap -sV -sC -A 10.13.38.11 -Pn   Web Enumeration:  PORT 80 iis default page..   Nikto:
- simple web vuln scanner $ nikto -h 10.13.38.11   nikto revealed a .DS_Store file in the server&amp;rsquo;s root folder.
-The DS_Store, or Desktop Services Store is a hidden file use by Mac OS X.</description>
+      <description>As you see endgame type consists of more than one machine connected to each other and the flags are devided on specific steps..&#xA;1. Enumeration: Nmap: $ nmap -sV -sC -A 10.13.38.11 -Pn Web Enumeration: PORT 80 iis default page.. Nikto:&#xA;simple web vuln scanner $ nikto -h 10.13.38.11 nikto revealed a .DS_Store file in the server&amp;rsquo;s root folder.&#xA;The DS_Store, or Desktop Services Store is a hidden file use by Mac OS X.</description>
     </item>
-    
     <item>
       <title>Active HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/active/</link>
       <pubDate>Fri, 30 Apr 2021 00:54:40 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/active/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.100 -Pn   Many ports are open so let&amp;rsquo;s focus on the important ones only:
- kerberos on 88 , netbios-ssn on 139 , ldap on 389,3268  SMB Enumeration:
-As we have netbios-ssn open on port 139 let’s run smbmap and see if their shared files..
-  smbmap -H 10.10.10.100 see!</description>
+      <description>1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -A 10.10.10.100 -Pn Many ports are open so let&amp;rsquo;s focus on the important ones only:&#xA;kerberos on 88 , netbios-ssn on 139 , ldap on 389,3268 SMB Enumeration:&#xA;As we have netbios-ssn open on port 139 let’s run smbmap and see if their shared files..&#xA;smbmap -H 10.10.10.100 see! we can acces Replication..&#xA;smbclient:</description>
     </item>
-    
     <item>
       <title>Bounty HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/bounty/</link>
       <pubDate>Fri, 30 Apr 2021 00:54:09 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/bounty/</guid>
-      <description>1. Enumeration:  Nmap:   Web Enumeration:  visiting the website &amp;raquo; nothing useful   wfuzz: $ wfuzz -c --hc 404 -t 200 -w /usr/share/wordlists/dirb/common.txt http://bounty.htb/FUZZ
-Gobuster: since it&amp;rsquo;s iis server , let&amp;rsquo;s look for aspx extentions: $ gobuster dir -u http://bounty.htb -x aspx -w /usr/share/wordlists/dirb/common.txt -t 20 </description>
+      <description>&#xA;1. Enumeration: Nmap: Web Enumeration: visiting the website &amp;raquo; nothing useful wfuzz: $ wfuzz -c --hc 404 -t 200 -w /usr/share/wordlists/dirb/common.txt http://bounty.htb/FUZZ&#xA;Gobuster: since it&amp;rsquo;s iis server , let&amp;rsquo;s look for aspx extentions: $ gobuster dir -u http://bounty.htb -x aspx -w /usr/share/wordlists/dirb/common.txt -t 20 </description>
     </item>
-    
     <item>
       <title>Blue HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/blue/</link>
       <pubDate>Fri, 30 Apr 2021 00:52:29 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/blue/</guid>
-      <description>Blue, while possibly the most simple machine on Hack The Box, demonstrates the severity of the EternalBlue exploit, which has been used in multiple large-scale ransomware and crypto-mining attacks since it was leaked publicly.
-1. Enumeration:  Nmap:   </description>
+      <description>&#xA;Blue, while possibly the most simple machine on Hack The Box, demonstrates the severity of the EternalBlue exploit, which has been used in multiple large-scale ransomware and crypto-mining attacks since it was leaked publicly.&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Granny HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/granny/</link>
       <pubDate>Tue, 13 Apr 2021 02:26:29 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/granny/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Grandpa HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/grandpa/</link>
       <pubDate>Mon, 12 Apr 2021 11:37:31 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/grandpa/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Arctic HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/arctic/</link>
       <pubDate>Mon, 12 Apr 2021 11:37:21 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/arctic/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Optimum HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/optimum/</link>
       <pubDate>Mon, 12 Apr 2021 11:37:13 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/optimum/</guid>
-      <description>There are two ways to solve this. one of them using metasploit and it&amp;rsquo;s the easy one. so we will not using this one here. And will use powershell..
-1. Enumeration:  Nmap:   </description>
+      <description>&#xA;There are two ways to solve this. one of them using metasploit and it&amp;rsquo;s the easy one. so we will not using this one here. And will use powershell..&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Devel HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/devel/</link>
       <pubDate>Thu, 08 Apr 2021 23:21:51 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/devel/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Legacy HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/legacy/</link>
       <pubDate>Sun, 04 Apr 2021 23:15:54 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/legacy/</guid>
-      <description>This machine mimics a windows legacy (windows xp). it&amp;rsquo;s a straight forward one depends on a public exploit for the (MS08-067) patch leads to RCE and gets us root access directly.
-enjoy..
-1. Enumeration:  Nmap:  $ nmap -sC -sV 10.10.10.4 -Pn     The ports of interest (139, 445).
-2. let&amp;rsquo;s do a vulnerability scan on them:  $ sudo nmap -p139,445 --script vuln 10.10.10.4   It revealed an RCE in the samba version with cve number (2008-4250) or (MS08-067) patch.</description>
+      <description>This machine mimics a windows legacy (windows xp). it&amp;rsquo;s a straight forward one depends on a public exploit for the (MS08-067) patch leads to RCE and gets us root access directly.&#xA;enjoy..&#xA;1. Enumeration: Nmap: $ nmap -sC -sV 10.10.10.4 -Pn The ports of interest (139, 445).&#xA;2. let&amp;rsquo;s do a vulnerability scan on them: $ sudo nmap -p139,445 --script vuln 10.10.10.4 It revealed an RCE in the samba version with cve number (2008-4250) or (MS08-067) patch.</description>
     </item>
-    
   </channel>
 </rss>

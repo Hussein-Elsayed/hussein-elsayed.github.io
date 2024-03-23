@@ -6,89 +6,63 @@
     <description>Recent content in medium on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Jul 2021 14:23:49 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 14:23:49 +0200</lastBuildDate>
+    <atom:link href="https://hussein-elsayed.github.io/tags/medium/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ophiuchi HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/ophiuchi/</link>
       <pubDate>Sat, 03 Jul 2021 14:23:49 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/ophiuchi/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -oA 10.10.10.227   We only got two open ports: ssh on (port 22), apache server on (port 8080)
-2. Web enumeration: let&amp;rsquo;s discover what&amp;rsquo;s running over there..
-and the source code (press ctrl+u) so we got a Yaml parser and nothing interesting in the source code ..
-also try any yaml code u get this page as a response: About yaml &amp;amp; parser thing:   YAML is a human-readable data-serialization language.</description>
+      <description>1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -oA 10.10.10.227 We only got two open ports: ssh on (port 22), apache server on (port 8080)&#xA;2. Web enumeration: let&amp;rsquo;s discover what&amp;rsquo;s running over there..&#xA;and the source code (press ctrl+u) so we got a Yaml parser and nothing interesting in the source code ..&#xA;also try any yaml code u get this page as a response: About yaml &amp;amp; parser thing: YAML is a human-readable data-serialization language.</description>
     </item>
-    
     <item>
       <title>Tenet HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/tenet/</link>
       <pubDate>Mon, 14 Jun 2021 03:43:11 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/tenet/</guid>
-      <description>1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.223   Web Enumeration:  just the apache default page   </description>
+      <description>&#xA;1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.223 Web Enumeration: just the apache default page </description>
     </item>
-    
     <item>
       <title>Ready HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/ready/</link>
       <pubDate>Mon, 17 May 2021 19:32:32 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/ready/</guid>
-      <description>1. Enumeration:  Nmap:   Web Enumeration:   PORT 5080: Got gitlab login form   let&amp;rsquo;s sign up: and we &amp;rsquo;re in: checking /help :
- it&amp;rsquo;s gitlab version 11.4.7   Searching for exploits:
-  got public one from exploitdb   let&amp;rsquo;s download and edit the exploit:
-  As i remember it didn&amp;rsquo;t work properly (there are some new versions of this exploit on exploitdb now) and i used another exploit from github back then</description>
+      <description>1. Enumeration: Nmap: Web Enumeration: PORT 5080: Got gitlab login form let&amp;rsquo;s sign up: and we &amp;rsquo;re in: checking /help :&#xA;it&amp;rsquo;s gitlab version 11.4.7 Searching for exploits:&#xA;got public one from exploitdb let&amp;rsquo;s download and edit the exploit:&#xA;As i remember it didn&amp;rsquo;t work properly (there are some new versions of this exploit on exploitdb now) and i used another exploit from github back then&#xA;Github exploit: download and edit: python3 gitlab_rce.</description>
     </item>
-    
     <item>
       <title>Jeeves HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/jeeves/</link>
       <pubDate>Thu, 06 May 2021 06:02:12 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/jeeves/</guid>
-      <description>1. Enumeration:  Nmap:   </description>
+      <description>&#xA;1. Enumeration: Nmap: </description>
     </item>
-    
     <item>
       <title>Bucket HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/bucket/</link>
       <pubDate>Sat, 01 May 2021 04:31:01 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/bucket/</guid>
-      <description>1. Enumeration:  Nmap scan:   from nmap &amp;raquo; let&amp;rsquo;s add bucket.htb to our /etc/hosts file </description>
+      <description>&#xA;1. Enumeration: Nmap scan: from nmap &amp;raquo; let&amp;rsquo;s add bucket.htb to our /etc/hosts file </description>
     </item>
-    
     <item>
       <title>Jewel HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/jewel/</link>
       <pubDate>Sat, 01 May 2021 04:30:46 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/jewel/</guid>
-      <description>1. Enumeration:  Nmap scan:   </description>
+      <description>&#xA;1. Enumeration: Nmap scan: </description>
     </item>
-    
     <item>
       <title>Passage HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/passage/</link>
       <pubDate>Sat, 01 May 2021 04:30:26 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/passage/</guid>
-      <description>1. Enumeration:  Nmap scan:   </description>
+      <description>&#xA;1. Enumeration: Nmap scan: </description>
     </item>
-    
     <item>
       <title>Time HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/time/</link>
       <pubDate>Fri, 26 Mar 2021 04:42:47 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/time/</guid>
-      <description>Time is a medium machine retired today, but i think it&amp;rsquo;s an easy and straight forward one. enjoy ..
-1. Enumeration:   Nmap scan:
-  nmap -sC -sV 10.10.10.214     Web Enumeration:
- let&amp;rsquo;s check out the running web server:     And the source code: Nothing interesting in the source code.
-  let&amp;rsquo;s search for hidden directories:
-  $ python3 dirsearch.</description>
+      <description>Time is a medium machine retired today, but i think it&amp;rsquo;s an easy and straight forward one. enjoy ..&#xA;1. Enumeration: Nmap scan:&#xA;nmap -sC -sV 10.10.10.214 Web Enumeration:&#xA;let&amp;rsquo;s check out the running web server: And the source code: Nothing interesting in the source code.&#xA;let&amp;rsquo;s search for hidden directories:&#xA;$ python3 dirsearch.py -u http://10.10.10.223/ -e txt,html,php,log,zip,bac,bak,tar Nothing useful inside them: also checking /index.php and /index.php/login &amp;raquo; gives nothing useful and redirects back to the main page Let&amp;rsquo;s see the app functionality: when tried the beautifier &amp;gt; it worked fine when tried validator (still in beta version) &amp;raquo; tried some meaningless letters gave some suspicious error &amp;raquo; will search with it to see its meaning.</description>
     </item>
-    
   </channel>
 </rss>

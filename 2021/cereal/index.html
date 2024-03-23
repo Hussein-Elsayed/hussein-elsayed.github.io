@@ -34,12 +34,13 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Cereal HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap: To scan for open ports and services $ nmap -sC -sV 10.10.10.217   So Three ports are opened 22:ssh 80:http 443:https
-There are two domain names in nmap result(DNS:cereal.htb, DNS:source.cereal.htb), Let&rsquo;s add them in our /etc/hosts file: 2. Web Enumeration:   cereal.htb
- There is a simple login page:     source.cereal.htb
- gives us an error page contains path of file(C:\inetpub\source\default.aspx):     Gobuster or dirsearch:"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Cereal HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap: To scan for open ports and services $ nmap -sC -sV 10.10.10.217 So Three ports are opened 22:ssh 80:http 443:https
+There are two domain names in nmap result(DNS:cereal.htb, DNS:source.cereal.htb), Let&rsquo;s add them in our /etc/hosts file: 2. Web Enumeration: cereal.htb
+There is a simple login page: source.cereal.htb
+gives us an error page contains path of file(C:\inetpub\source\default.aspx): Gobuster or dirsearch:
+$ gobuster dir -u http://source.cereal.htb/ -w /usr/share/ raft-small-words."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -208,12 +209,12 @@ To scan for open ports and services</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/internetwache/GitTools
-cd GitTools/Dumper/
-ls
-cat README.md
-bash gitdumper.sh http://source.cereal.htb/.git/ dist-dir            
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/internetwache/GitTools
+</span></span><span style="display:flex;"><span>cd GitTools/Dumper/
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span>cat README.md
+</span></span><span style="display:flex;"><span>bash gitdumper.sh http://source.cereal.htb/.git/ dist-dir            
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p><code>$ bash gitdumper.sh http://source.cereal.htb/.git/  /home/sehs/Downloads/cereal/dump/</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -224,11 +225,11 @@ bash gitdumper.sh http://source.cereal.htb/.git/ dist-dir
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">cd ../Extractor/
-ls
-cat README.md
-bash extractor.sh ../../dump/ dist-dir/all_dump/
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cd ../Extractor/
+</span></span><span style="display:flex;"><span>ls
+</span></span><span style="display:flex;"><span>cat README.md
+</span></span><span style="display:flex;"><span>bash extractor.sh ../../dump/ dist-dir/all_dump/
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p><code>$ bash extractor.sh /home/sehs/Downloads/cereal/dump/ /home/sehs/Downloads/cereal/all_dump/</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/cereal/14.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>So now we got our git files
@@ -377,7 +378,7 @@ let&rsquo;s look for the authentication mechanism or any other interesting stuff
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

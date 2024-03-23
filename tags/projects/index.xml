@@ -6,17 +6,14 @@
     <description>Recent content in projects on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jan 2020 14:42:08 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jan 2020 14:42:08 +0200</lastBuildDate>
+    <atom:link href="https://hussein-elsayed.github.io/tags/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Duckuino</title>
       <link>https://hussein-elsayed.github.io/2020/duckuino/</link>
       <pubDate>Wed, 08 Jan 2020 14:42:08 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2020/duckuino/</guid>
-      <description>It came to my mind to make a rubber ducky using arduino uno which i already have .. so let&amp;rsquo;s get started.
- Rubber Ducky is used to perform HID attacks &amp;raquo; search it out.  Arduino Uno has a chip &amp;ldquo;Atmegau16u2&amp;rdquo; or &amp;ldquo;8u2&amp;rdquo;, But mine is Arduino Uno R3 with Atmega16u2 chip.
- The ATmega16U2 chip on your Arduino board acts as a bridge between the computer&amp;rsquo;s USB port and the main processor&amp;rsquo;s serial port.</description>
+      <description>It came to my mind to make a rubber ducky using arduino uno which i already have .. so let&amp;rsquo;s get started.&#xA;Rubber Ducky is used to perform HID attacks &amp;raquo; search it out. Arduino Uno has a chip &amp;ldquo;Atmegau16u2&amp;rdquo; or &amp;ldquo;8u2&amp;rdquo;, But mine is Arduino Uno R3 with Atmega16u2 chip.&#xA;The ATmega16U2 chip on your Arduino board acts as a bridge between the computer&amp;rsquo;s USB port and the main processor&amp;rsquo;s serial port.</description>
     </item>
-    
   </channel>
 </rss>

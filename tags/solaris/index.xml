@@ -6,18 +6,14 @@
     <description>Recent content in solaris on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Apr 2021 00:54:03 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/solaris/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 00:54:03 +0200</lastBuildDate>
+    <atom:link href="https://hussein-elsayed.github.io/tags/solaris/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sunday HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/sunday/</link>
       <pubDate>Fri, 30 Apr 2021 00:54:03 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/sunday/</guid>
-      <description>1. Enumeration:  Nmap:   another scan for all the TCP ports:
- $ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76    Best result: scanning all ports but took too much time $ nmap -p 1-65535 -T4 -A 10.10.10.76 Anyway we have these interesting ports and services:
- 79	finger 111, 52988	rpcbind 22022	ssh  Let&amp;rsquo;s do some search:
-A finger service is running on this host.</description>
+      <description>1. Enumeration: Nmap: another scan for all the TCP ports:&#xA;$ nmap -sC -sV -p- -T4 --min-parallelism=50 -n --min-rate=300 -o nmapscan 10.10.10.76 Best result: scanning all ports but took too much time $ nmap -p 1-65535 -T4 -A 10.10.10.76 Anyway we have these interesting ports and services:&#xA;79&#x9;finger 111, 52988&#x9;rpcbind 22022&#x9;ssh Let&amp;rsquo;s do some search:&#xA;A finger service is running on this host. The finger protocol is used to find out information about users on a remote system.</description>
     </item>
-    
   </channel>
 </rss>

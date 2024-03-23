@@ -34,11 +34,11 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kioptrix Level 1 Writeup"/>
-<meta name="twitter:description" content="This machine is from vulnhub you can download it here.   After downloading the machine you will open the .vmx file in VMware or .vmdk with VirtualBox.
-  It&rsquo;s a preconfigured machine it must work directly, but you may need to change the network adapter to NAT and the version to linux and kernal version you work on, then power it on &hellip;
-  have fun&hellip; 0. Getting VM&rsquo;s IP:  using Netdiscover or Nmap  $ nmap -sn 192."/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Kioptrix Level 1 Writeup"/>
+<meta name="twitter:description" content="This machine is from vulnhub you can download it here. After downloading the machine you will open the .vmx file in VMware or .vmdk with VirtualBox.
+It&rsquo;s a preconfigured machine it must work directly, but you may need to change the network adapter to NAT and the version to linux and kernal version you work on, then power it on &hellip;
+have fun&hellip; 0. Getting VM&rsquo;s IP: using Netdiscover or Nmap $ nmap -sn 192."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -176,15 +176,15 @@
 <ul>
 <li>using <strong>Netdiscover</strong> or <strong>Nmap</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">$ nmap <span style="color:#f92672">-</span>sn 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">/</span>24
-Starting Nmap 7<span style="color:#f92672">.</span><span style="color:#a6e22e">80</span> <span style="color:#f92672">(</span> https<span style="color:#f92672">:</span><span style="color:#75715e">//nmap.org ) at 2020-03-01 17:18 EET
-</span><span style="color:#75715e"></span>Nmap scan report <span style="color:#66d9ef">for</span> 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span>
-Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">0045s</span> latency<span style="color:#f92672">).</span>
-Nmap scan report <span style="color:#66d9ef">for</span> 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">7</span>
-Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">00016s</span> latency<span style="color:#f92672">).</span>
-Nmap scan report <span style="color:#66d9ef">for</span> 192<span style="color:#f92672">.</span><span style="color:#a6e22e">168</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">.</span><span style="color:#a6e22e">104</span> <span style="color:#f92672">&lt;&lt;</span> kioptrix ip
-Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">0033s</span> latency<span style="color:#f92672">).</span>
-</code></pre></div><h3 id="1-enumeration">1. Enumeration:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>$ nmap <span style="color:#f92672">-</span>sn 192.<span style="color:#a6e22e">168</span>.<span style="color:#a6e22e">1</span>.<span style="color:#a6e22e">0</span><span style="color:#f92672">/</span>24
+</span></span><span style="display:flex;"><span>Starting Nmap 7.<span style="color:#a6e22e">80</span> ( https:<span style="color:#75715e">//nmap.org ) at 2020-03-01 17:18 EET</span>
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 192.<span style="color:#a6e22e">168</span>.<span style="color:#a6e22e">1</span>.<span style="color:#a6e22e">1</span>
+</span></span><span style="display:flex;"><span>Host is <span style="color:#a6e22e">up</span> (0.<span style="color:#a6e22e">0045s</span> latency).
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 192.<span style="color:#a6e22e">168</span>.<span style="color:#a6e22e">1</span>.<span style="color:#a6e22e">7</span>
+</span></span><span style="display:flex;"><span>Host is <span style="color:#a6e22e">up</span> (0.<span style="color:#a6e22e">00016s</span> latency).
+</span></span><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> 192.<span style="color:#a6e22e">168</span>.<span style="color:#a6e22e">1</span>.<span style="color:#a6e22e">104</span> <span style="color:#f92672">&lt;&lt;</span> kioptrix ip
+</span></span><span style="display:flex;"><span>Host is <span style="color:#a6e22e">up</span> (0.<span style="color:#a6e22e">0033s</span> latency).
+</span></span></code></pre></div><h3 id="1-enumeration">1. Enumeration:</h3>
 <ul>
 <li>
 <h4 id="nmap">Nmap:</h4>
@@ -193,20 +193,20 @@ Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</spa
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">$ nmap -T4 -A -v 192.168.1.104</span>
-<span style="color:#ae81ff">PORT STATE SERVICE VERSION</span>
-<span style="color:#ae81ff">22</span><span style="color:#ae81ff">/tcp open ssh OpenSSH 2.9p2 (protocol 1.99)</span>
-<span style="color:#ae81ff">80</span><span style="color:#ae81ff">/tcp open http Apache httpd 1.3.20 ((Unix) (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)</span>
-<span style="color:#ae81ff">111</span><span style="color:#ae81ff">/tcp open rpcbind 2 (RPC</span> <span style="color:#75715e">#100000)</span>
-<span style="color:#f92672">139/tcp open netbios-ssn Samba smbd (workgroup</span>: <span style="color:#ae81ff">MYGROUP)</span>
-<span style="color:#ae81ff">443</span><span style="color:#ae81ff">/tcp open ssl/https Apache/1.3.20 (Unix) (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b</span>
-<span style="color:#ae81ff">1024</span><span style="color:#ae81ff">/tcp open status 1 (RPC</span> <span style="color:#75715e">#100024)</span>
-<span style="color:#f92672">MAC Address</span>: <span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">3E:AA:BE:1F:AB (Tp-link Technologies)</span>
-<span style="color:#f92672">Device type</span>: <span style="color:#ae81ff">general purpose</span>
-<span style="color:#f92672">Running</span>: <span style="color:#ae81ff">Linux 2.4.X</span>
-<span style="color:#f92672">OS CPE</span>: <span style="color:#ae81ff">cpe:/o:linux:linux_kernel:2.4</span>
-<span style="color:#f92672">OS details</span>: <span style="color:#ae81ff">Linux 2.4.9 - 2.4.18 (likely embedded)</span>
-</code></pre></div><p>After scanning there are lots of running services:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ae81ff">$ nmap -T4 -A -v 192.168.1.104</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">PORT STATE SERVICE VERSION</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">22</span><span style="color:#ae81ff">/tcp open ssh OpenSSH 2.9p2 (protocol 1.99)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">80</span><span style="color:#ae81ff">/tcp open http Apache httpd 1.3.20 ((Unix) (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">111</span><span style="color:#ae81ff">/tcp open rpcbind 2 (RPC</span> <span style="color:#75715e">#100000)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">139/tcp open netbios-ssn Samba smbd (workgroup</span>: <span style="color:#ae81ff">MYGROUP)</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">443</span><span style="color:#ae81ff">/tcp open ssl/https Apache/1.3.20 (Unix) (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1024</span><span style="color:#ae81ff">/tcp open status 1 (RPC</span> <span style="color:#75715e">#100024)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">MAC Address</span>: <span style="color:#ae81ff">50</span>:<span style="color:#ae81ff">3E:AA:BE:1F:AB (Tp-link Technologies)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Device type</span>: <span style="color:#ae81ff">general purpose</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">Running</span>: <span style="color:#ae81ff">Linux 2.4.X</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">OS CPE</span>: <span style="color:#ae81ff">cpe:/o:linux:linux_kernel:2.4</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">OS details</span>: <span style="color:#ae81ff">Linux 2.4.9 - 2.4.18 (likely embedded)</span>
+</span></span></code></pre></div><p>After scanning there are lots of running services:</p>
 <ul>
 <li>Apache</li>
 <li>Openssh</li>
@@ -219,29 +219,29 @@ Host is <span style="color:#a6e22e">up</span> <span style="color:#f92672">(</spa
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 <li>tried to enumerate, if there any hidden directories:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ dirb http://192.168.1.104/ /usr/share/wordlists/dirb/common.txt
-
-GENERATED WORDS: 4612
-
----- Scanning URL: http://192.168.1.104/ ----
-+ http://192.168.1.104/~operator (CODE:403|SIZE:273)
-+ http://192.168.1.104/~root (CODE:403|SIZE:269)
-+ http://192.168.1.104/cgi-bin/ (CODE:403|SIZE:272)
-+ http://192.168.1.104/index.html (CODE:200|SIZE:2890)
-==&gt; DIRECTORY: http://192.168.1.104/manual/
-==&gt; DIRECTORY: http://192.168.1.104/mrtg/
-==&gt; DIRECTORY: http://192.168.1.104/usage/
-
----- Entering directory: http://192.168.1.104/manual/ ----
-(!) WARNING: Directory IS LISTABLE. No need to scan it.
-(Use mode &#39;-w&#39; if you want to scan it anyway)
-
----- Entering directory: http://192.168.1.104/mrtg/ ----
-+ http://192.168.1.104/mrtg/index.html (CODE:200|SIZE:17318)
-
----- Entering directory: http://192.168.1.104/usage/ ----
-+ http://192.168.1.104/usage/index.html (CODE:200|SIZE:3704)
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ dirb http://192.168.1.104/ /usr/share/wordlists/dirb/common.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GENERATED WORDS: 4612
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---- Scanning URL: http://192.168.1.104/ ----
+</span></span><span style="display:flex;"><span>+ http://192.168.1.104/~operator (CODE:403|SIZE:273)
+</span></span><span style="display:flex;"><span>+ http://192.168.1.104/~root (CODE:403|SIZE:269)
+</span></span><span style="display:flex;"><span>+ http://192.168.1.104/cgi-bin/ (CODE:403|SIZE:272)
+</span></span><span style="display:flex;"><span>+ http://192.168.1.104/index.html (CODE:200|SIZE:2890)
+</span></span><span style="display:flex;"><span>==&gt; DIRECTORY: http://192.168.1.104/manual/
+</span></span><span style="display:flex;"><span>==&gt; DIRECTORY: http://192.168.1.104/mrtg/
+</span></span><span style="display:flex;"><span>==&gt; DIRECTORY: http://192.168.1.104/usage/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---- Entering directory: http://192.168.1.104/manual/ ----
+</span></span><span style="display:flex;"><span>(!) WARNING: Directory IS LISTABLE. No need to scan it.
+</span></span><span style="display:flex;"><span>(Use mode &#39;-w&#39; if you want to scan it anyway)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---- Entering directory: http://192.168.1.104/mrtg/ ----
+</span></span><span style="display:flex;"><span>+ http://192.168.1.104/mrtg/index.html (CODE:200|SIZE:17318)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---- Entering directory: http://192.168.1.104/usage/ ----
+</span></span><span style="display:flex;"><span>+ http://192.168.1.104/usage/index.html (CODE:200|SIZE:3704)
+</span></span></code></pre></div><ul>
 <li>nothing useful.</li>
 </ul>
 <h3 id="searching-for-exploits">Searching for exploits:</h3>
@@ -254,8 +254,8 @@ GENERATED WORDS: 4612
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text"># searchsploit apache mod_ssl
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/3.png" alt="Apache mod_ssl < 2.8.7 OpenSSL - &lsquo;OpenFuckV2.c&rsquo; Remote Bof | exploits/unix/remote/764.c" class="lazyload"><figcaption class="image-caption">Apache mod_ssl < 2.8.7 OpenSSL - &lsquo;OpenFuckV2.c&rsquo; Remote Bof | exploits/unix/remote/764.c</figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span># searchsploit apache mod_ssl
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/kioptrix1/3.png" alt="Apache mod_ssl &lt; 2.8.7 OpenSSL - &lsquo;OpenFuckV2.c&rsquo; Remote Bof | exploits/unix/remote/764.c" class="lazyload"><figcaption class="image-caption">Apache mod_ssl &lt; 2.8.7 OpenSSL - &lsquo;OpenFuckV2.c&rsquo; Remote Bof | exploits/unix/remote/764.c</figcaption></figure></p>
 <ul>
 <li>now we got an exploit matches our version lets try it out (the 2nd one 764.c) ..</li>
 </ul>
@@ -429,7 +429,7 @@ GENERATED WORDS: 4612
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

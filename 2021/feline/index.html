@@ -34,9 +34,10 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Feline HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap scan:  PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA) | 256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA) |_ 256 18💿9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519) 8080/tcp open http Apache Tomcat 9.0.27 |_http-title: VirusBucket Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel let&rsquo;s add this VirusBucket to our hostnames: Web Enumeration:  PORT 8080:   "/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Feline HTB Writeup"/>
+<meta name="twitter:description" content="
+1. Enumeration: Nmap scan: PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA) | 256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA) |_ 256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519) 8080/tcp open http Apache Tomcat 9.0.27 |_http-title: VirusBucket Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel let&rsquo;s add this VirusBucket to our hostnames: Web Enumeration: PORT 8080: "/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -165,16 +166,16 @@
 <ul>
 <li>Nmap scan:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">PORT     STATE SERVICE VERSION
-22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
-|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
-|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
-|_  256 18💿9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
-8080/tcp open  http    Apache Tomcat 9.0.27
-|_http-title: VirusBucket
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/feline/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>PORT     STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
+</span></span><span style="display:flex;"><span>| ssh-hostkey: 
+</span></span><span style="display:flex;"><span>|   3072 48:ad:d5:b8:3a:9f:bc:be:f7:e8:20:1e:f6:bf:de:ae (RSA)
+</span></span><span style="display:flex;"><span>|   256 b7:89:6c:0b:20:ed:49:b2:c1:86:7c:29:92:74:1c:1f (ECDSA)
+</span></span><span style="display:flex;"><span>|_  256 18:cd:9d:08:a6:21:a8:b8:b6:f7:9f:8d:40:51:54:fb (ED25519)
+</span></span><span style="display:flex;"><span>8080/tcp open  http    Apache Tomcat 9.0.27
+</span></span><span style="display:flex;"><span>|_http-title: VirusBucket
+</span></span><span style="display:flex;"><span>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/feline/2.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>let&rsquo;s add this <code>VirusBucket</code> to our hostnames:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/feline/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <h3 id="web-enumeration">Web Enumeration:</h3>
@@ -315,7 +316,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

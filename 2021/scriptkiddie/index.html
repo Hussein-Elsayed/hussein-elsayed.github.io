@@ -34,11 +34,11 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Scriptkiddie HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.226    So we got ssh on (port 22) and a Werkzeug httpd server on (port 5000)
-2. Web Enumeration:   Got this interesting page &hellip;   It makes some functions like searchsploit or making nmap scan on IPs, also making metasploit payloads!
-  The interesting part When generating any windows or linux payload, we discover a /static/payloads/name."/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Scriptkiddie HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV 10.10.10.226 So we got ssh on (port 22) and a Werkzeug httpd server on (port 5000)
+2. Web Enumeration: Got this interesting page &hellip; It makes some functions like searchsploit or making nmap scan on IPs, also making metasploit payloads!
+The interesting part When generating any windows or linux payload, we discover a /static/payloads/name.exe of generated payloads where we can download from: We also can provide a template for given payload type we are going to generate:"/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -57,7 +57,7 @@
   },
   "genre": "posts",
   "keywords": "Writeups, hackthebox, retired, easy, linux",
-  "wordcount":  452 ,
+  "wordcount":  453 ,
   "url": "https:\/\/hussein-elsayed.github.io\/2021\/scriptkiddie\/",
   "datePublished": "2021-06-05T03:20:36\u002b02:00",
   "dateModified": "2021-06-05T03:20:36\u002b02:00",
@@ -243,18 +243,18 @@ And here we got shell as user kid and his flag &hellip;</li>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/sk/16.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>
-log<span style="color:#f92672">=</span>/home/kid/logs/hackers
-
-cd /home/pwn/
-cat $log | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f3- | sort -u | <span style="color:#66d9ef">while</span> read ip; <span style="color:#66d9ef">do</span>
-    sh -c <span style="color:#e6db74">&#34;nmap --top-ports 10 -oN recon/</span><span style="color:#e6db74">${</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74">.nmap </span><span style="color:#e6db74">${</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74"> 2&gt;&amp;1 &gt;/dev/null&#34;</span> &amp;
-<span style="color:#66d9ef">done</span>
-
-<span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>wc -l &lt; $log<span style="color:#66d9ef">)</span> -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span> echo -n &gt; $log; <span style="color:#66d9ef">fi</span>
-</code></pre></div><ul>
-<li>-d' ' single space used as field separator and -f3- means the ip starts from the 3rd field</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>log<span style="color:#f92672">=</span>/home/kid/logs/hackers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd /home/pwn/
+</span></span><span style="display:flex;"><span>cat $log | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f3- | sort -u | <span style="color:#66d9ef">while</span> read ip; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    sh -c <span style="color:#e6db74">&#34;nmap --top-ports 10 -oN recon/</span><span style="color:#e6db74">${</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74">.nmap </span><span style="color:#e6db74">${</span>ip<span style="color:#e6db74">}</span><span style="color:#e6db74"> 2&gt;&amp;1 &gt;/dev/null&#34;</span> &amp;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>wc -l &lt; $log<span style="color:#66d9ef">)</span> -gt <span style="color:#ae81ff">0</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span> echo -n &gt; $log; <span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><ul>
+<li>-d&rsquo; &rsquo; single space used as field separator and -f3- means the ip starts from the 3rd field</li>
 </ul>
 <h4 id="its-a-bash-script-doing-some-nmap-scan-over-the-logged-ips-from-the-homekidlogshackers-file-if-we-could-inject-our-reverse-shell-payload-in-the-file-and-commenting-the-rest-of-the-file-to-scape-the-parsing-process-it-will-be-executed-by-scanloserssh-and-we-will-get-a-root-shell">It&rsquo;s a bash script doing some nmap scan over the logged IPs from the <code>/home/kid/logs/hackers</code> file.. if we could inject our reverse shell payload in the file and commenting the rest of the file to scape the parsing process; it will be executed by scanlosers.sh and we will get a root shell..</h4>
 <ul>
@@ -316,7 +316,7 @@ cat $log | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f3- | sort -u |
            
             <p class="copyright-item">
                     <span>Words:</span>
-                   <span>452</span>
+                   <span>453</span>
             </p>
             
             <p class="copyright-item">
@@ -435,7 +435,7 @@ cat $log | cut -d<span style="color:#e6db74">&#39; &#39;</span> -f3- | sort -u |
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

@@ -34,10 +34,11 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Bounty HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap:   Web Enumeration:  visiting the website &raquo; nothing useful   wfuzz: $ wfuzz -c --hc 404 -t 200 -w /usr/share/wordlists/dirb/common.txt http://bounty.htb/FUZZ
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Bounty HTB Writeup"/>
+<meta name="twitter:description" content="
+1. Enumeration: Nmap: Web Enumeration: visiting the website &raquo; nothing useful wfuzz: $ wfuzz -c --hc 404 -t 200 -w /usr/share/wordlists/dirb/common.txt http://bounty.htb/FUZZ
 Gobuster: since it&rsquo;s iis server , let&rsquo;s look for aspx extentions: $ gobuster dir -u http://bounty.htb -x aspx -w /usr/share/wordlists/dirb/common.txt -t 20 "/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -310,7 +311,7 @@ since it&rsquo;s iis server , let&rsquo;s look for aspx extentions:
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

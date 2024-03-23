@@ -6,15 +6,14 @@
     <description>Recent content in IoT on Wh1rlw1nd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 May 2021 04:27:17 +0200</lastBuildDate><atom:link href="https://hussein-elsayed.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 May 2021 04:27:17 +0200</lastBuildDate>
+    <atom:link href="https://hussein-elsayed.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Omni HTB Writeup</title>
       <link>https://hussein-elsayed.github.io/2021/omni/</link>
       <pubDate>Sat, 01 May 2021 04:27:17 +0200</pubDate>
-      
       <guid>https://hussein-elsayed.github.io/2021/omni/</guid>
-      <description>1. Enumeration:  Nmap scan:   </description>
+      <description>&#xA;1. Enumeration: Nmap scan: </description>
     </item>
-    
   </channel>
 </rss>

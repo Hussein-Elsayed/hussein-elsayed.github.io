@@ -34,9 +34,9 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Heist HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -o nmapscan 10.10.10.149   let&rsquo;s add it to our /etc/hosts file 2. Web Enumeration: tried admin:password but it asks for email not username , tried admin@htb , gave this error page: let&rsquo;s try login as guest: so we got user hazard asking the admin a question and this interesting attachment (config file) &gt; let&rsquo;s check it: security passwords min-length 12 enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91 username rout3r password 7 0242114B0E143F015F5D1E161713 username admin privilege 15 password 7 02375012182C1A1D751618034F36415408 another nmap scan shows two other open ports: $ nmap -sV -sT -p- -o fullportscan heist."/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Heist HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -o nmapscan 10.10.10.149 let&rsquo;s add it to our /etc/hosts file 2. Web Enumeration: tried admin:password but it asks for email not username , tried admin@htb , gave this error page: let&rsquo;s try login as guest: so we got user hazard asking the admin a question and this interesting attachment (config file) &gt; let&rsquo;s check it: security passwords min-length 12 enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91 username rout3r password 7 0242114B0E143F015F5D1E161713 username admin privilege 15 password 7 02375012182C1A1D751618034F36415408 another nmap scan shows two other open ports: $ nmap -sV -sT -p- -o fullportscan heist."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -178,7 +178,7 @@ To scan for open ports and services running</li>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/heist/6.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>so we got user hazard asking the admin a question and this interesting attachment (config file) &gt; let&rsquo;s check it:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/heist/7.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<pre><code>security passwords min-length 12
+<pre tabindex="0"><code>security passwords min-length 12
 enable secret 5 $1$pdQG$o8nrSzsGXeaduXrjlvKc91
 
 username rout3r password 7 0242114B0E143F015F5D1E161713
@@ -186,7 +186,7 @@ username admin privilege 15 password 7 02375012182C1A1D751618034F36415408
 </code></pre><p>another nmap scan shows two other open ports:
 <code>$ nmap -sV -sT -p- -o fullportscan heist.htb</code>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/heist/8.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<pre><code>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+<pre tabindex="0"><code>5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
 49669/tcp open  msrpc         Microsoft Windows RPC
 </code></pre><p>the port 5985 is for <a href="https://book.hacktricks.xyz/pentesting/5985-5986-pentesting-winrm">winRM</a>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/heist/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -322,7 +322,7 @@ username admin privilege 15 password 7 02375012182C1A1D751618034F36415408
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

